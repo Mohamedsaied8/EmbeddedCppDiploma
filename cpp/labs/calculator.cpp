@@ -35,6 +35,13 @@ namespace Computing
 
     std::int32_t add(std::int32_t n1,std::int32_t n2)
     {
+        std::cout <<"integer addition" << std::endl;
+        return n1 + n2;
+    }
+
+    float add(float n1,float n2)
+    {
+        std::cout <<"floating point addition" << std::endl;
         return n1 + n2;
     }
 
@@ -63,10 +70,11 @@ int main()
     std::cin >> secondNum;
     std::cout << "Please Enter Operating" << std::endl;
     std::cin >> operation;
-
+    float res=0.0;
     switch(operation)
     {
         case '+':
+                res = Computing::add(static_cast<float>(3.3),static_cast<float>(7.3));
                 result = Computing::add(firstNum,secondNum);
                 break;
         case '-':

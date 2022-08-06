@@ -6,11 +6,12 @@ Description: Convert Distance in Miles to Distance in Kms
 
 */
 #include <iostream>
-
+#define PI 3.14 //preprocessing
 using namespace std;
 
 int main()
 {
+    constexpr float PI_ = 3.14; //compile time 
 
     const float KM_PER_MILE = 1.6;
 

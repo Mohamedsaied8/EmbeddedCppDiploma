@@ -4,28 +4,40 @@
 
 Access      Same Class        Child       Outside
 
-Public        true            true         true
+Public        True            True         True
 
-Protected     true             true         False
+Protected     True            True         False
 
-Private        true            False        False
+Private       true            False        False
 
 */
 class Complex
 {
-    public:
-    Complex(float real = 0, float img=0) : mReal(real),mImg(img)
+
+public:
+   Complex(float real=0, float img=0) : mReal(real),mImg(img)
     {
     }
 
 friend std::ostream& operator<<(std::ostream& output,Complex const& complex);
 
+//return operator+()
+// complex c3 = c1.operator+(c2) 
+// c3 = c1 + c2;
 Complex& operator+(Complex  const &rhs)
 {
-
-    this->mReal = mReal + rhs.mReal;
-    this->mImg = mImg + rhs.mImg;
+    this->mReal = this->mReal + rhs.mReal;
+    this->mImg = this->mImg + rhs.mImg;
     return *this;
+}
+
+void setReal(float rl)
+{
+    this->mReal = rl;
+}
+float getReal()
+{
+    return this->mReal;
 }
 // copy assignment operator
 /*Complex& operator=(Complex &rhs)
@@ -51,12 +63,14 @@ std::ostream& operator<<(std::ostream& output,Complex const& complex)
 
 int main()
 {
-
+    //default constructor
+    Complex cd;
+    
     Complex c1(5,6);
     Complex c2(5,77);
     Complex c3(0,0);
-
-    c3 = c2 + c1;
+    c3 = c1 + c2;
+   // c3 = c1.operator+(c2);
     std::cout << c3;
 
     return 0;
