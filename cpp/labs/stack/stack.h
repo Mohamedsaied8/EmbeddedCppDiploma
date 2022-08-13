@@ -16,8 +16,6 @@ private:
 	T* stackPtr ;  
 } ;
 
-
-//constructor with the default size 10
 template <class T>
 Stack<T>::Stack(int s)
 {

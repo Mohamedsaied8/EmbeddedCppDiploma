@@ -9,8 +9,6 @@
 #include <functional> 
 using namespace std;
 
-
-
 class Graphic {
 public:
   virtual void draw() const = 0; //pure virtual function
@@ -19,7 +17,6 @@ public:
   virtual void getChild(int) {}
   virtual ~Graphic() {} //virtual destructor
 };
- 
 
 
 class Line : public Graphic {
@@ -48,16 +45,15 @@ class Picture : public Graphic {
 public:
   void draw() const {
     // for each element in gList, call the draw member function
-    for_each(gList.begin(), gList.end(), mem_fun(&Graphic::draw));
-    
+     for_each(gList.begin(), gList.end(), mem_fun(&Graphic::draw)); 
   }
- 
+
   void add(Graphic *aGraphic) {
     gList.push_back(aGraphic);
   }
  
 private:
-  vector<Graphic*> gList;
+  vector<Graphic*> gList; 
 };
  
 int main()

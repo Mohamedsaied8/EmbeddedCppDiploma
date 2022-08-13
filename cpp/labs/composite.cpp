@@ -22,6 +22,8 @@ class Page : public PageObject {
       cout << "Item Deleted from Page" << endl;
    }
 };
+
+//combining inheritance and composition
 class Copy : public PageObject {
    vector<PageObject> copyPages;
    public:
@@ -38,6 +40,7 @@ class Copy : public PageObject {
          cout << "Item deleted from the copy";
       }
 };
+
 int main() {
    Page p1;
    Page p2;
