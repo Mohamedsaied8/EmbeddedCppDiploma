@@ -1,0 +1,11 @@
+{
+    "cortex-debug.gdbPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/11.2 2022.02/bin/arm-none-eabi-gdb.exe",
+    "cortex-debug.JLinkGDBServerPath": "C:/Program Files (x86)/SEGGER/JLink/JLinkGDBServer.exe",
+    "cortex-debug.stutilPath": "C:/Program Files (x86)/stlink-1.7.0-x86_64-w64-mingw32/bin/st-util.exe",
+
+    "files.associations": {
+        "stm32f10x_gpio.h": "c",
+        "stm32f10x_rcc.h": "c",
+        "stm32f10x_conf.h": "c"
+    }
+}

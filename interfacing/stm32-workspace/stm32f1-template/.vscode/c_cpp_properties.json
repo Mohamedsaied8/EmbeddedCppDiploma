@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "STM32",
+            "includePath": [
+                "C:\\Me\\Material\\interfacing\\RoboKit\\stm32_workspace\\STM32F10x_StdPeriph_Lib_V3.5.0/**",
+                "C:\\Me\\Material\\interfacing\\RoboKit\\stm32_workspace\\STM32F10x_StdPeriph_Lib_V3.5.0\\Libraries\\CMSIS\\CM3\\DeviceSupport\\ST\\STM32F10x/**",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "USE_HAL_DRIVER",
+                "STM32F10x",
+                "STM32F10X_MD",
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\11.2 2022.02\\bin\\arm-none-eabi-gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
