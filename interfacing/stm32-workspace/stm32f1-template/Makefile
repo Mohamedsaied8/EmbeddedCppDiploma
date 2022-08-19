@@ -36,7 +36,7 @@ AFLAGS  = -mcpu=cortex-m4
 AFLAGS += -mthumb
 AFLAGS += -mthumb-interwork
 AFLAGS += -mlittle-endian
-AFLAGS += -mfloat-abi=hard
+AFLAGS += -mfloat-abi=soft
 AFLAGS += -mfpu=fpv4-sp-d16
 
 ## Compiler options

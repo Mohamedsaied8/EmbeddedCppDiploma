@@ -1,7 +1,8 @@
-# STM32F4 Template
+# STM32F1 Template
 
 
-This is a simple "stm32f4-template" example using the Standard Peripheral Library for [STM32F4 Discovery board](http://www.st.com/web/catalog/tools/FM116/SC959/SS1532/PF252419).
+This is a simple "stm32f4-template" example using the Standard Peripheral Library for [STM32F103 board].
+This template is modified by Robotics Corner but originally created by [original by Ross Wolin](https://github.com/rowol/stm32_discovery_arm_gcc/blob/master/blinky/).
 
 ### Files
 
