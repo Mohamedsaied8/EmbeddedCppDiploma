@@ -13,16 +13,15 @@ class String
         memcpy(m_data,string,mSize);
     }
 
-    String(const String& other)
+    String(const String& other) //copy constructor
     {
         printf("Copied\n");
         mSize = other.mSize;
         m_data = new char[mSize];
         memcpy(m_data,other.m_data,mSize);
-
     }
-    
-    String(String&& other)
+
+    String(String&& other) //rvalue referene
     {
         printf("moved\n");
         mSize = other.mSize;
@@ -54,7 +53,8 @@ class Entity
     {
 
     }
-     Entity(String&& name) : mName(std::move(name)) //std::move(name)
+    
+    Entity(String&& name) : mName(std::move(name))  
     {
 
     }
@@ -68,8 +68,11 @@ class Entity
 };
 
 int main()
-{
-    Entity entity(String("RoboticsCorner"));
+{ 
+    //1st copy in main
+    //2nd copy
+    String str("RoboticsCorner");
+    Entity entity(std::move(str));
     entity.printName();
 
 }

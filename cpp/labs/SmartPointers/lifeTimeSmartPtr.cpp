@@ -3,7 +3,7 @@
 #include <iostream>
 #include <memory>
 
-void asSmartPointerGood(std::shared_ptr<int>& shr)
+void asSmartPointerGood(std::shared_ptr<int> shr)
 {
   std::cout << "shr.use_count(): " << shr.use_count() << std::endl;  // (3)
   shr.reset(new int(2011));                                          // (5)
@@ -19,7 +19,7 @@ int main(){
   
   std::cout << std::endl;
   int value = 1998;
- // std::shared_ptr<int> firSha(new int(value));
+  //std::shared_ptr<int> firSha(new int(value));
 
   auto firSha = std::make_shared<int>(1998);
   auto secSha = firSha; //copy constructor

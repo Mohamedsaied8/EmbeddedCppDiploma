@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 12 21:25:27 2022
+# Make data base, printed on Mon Aug 29 19:03:57 2022
 
 # Variables
 
@@ -39,7 +39,7 @@ USERDNSDOMAIN = luxoft.com
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_14668_NVDQXSUKBOZVDJSO
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11440_SLENHCIRJXMGXARI
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -53,7 +53,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\MMohamedSaid\AppData\Roaming\Code\CachedData\6d9b74a70ca9c7733b29f0456fd8195364076dda
+VSCODE_CODE_CACHE_PATH = C:\Users\MMohamedSaid\AppData\Roaming\Code\CachedData\e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LANG = C
 # default
@@ -67,7 +67,7 @@ MAKEFLAGS = pqrR
 # environment
 ONEDRIVE = C:\Users\MMohamedSaid\OneDrive
 # makefile
-CURDIR := c:/Me/Material/interfacing/RoboKit/stm32-workspace
+CURDIR := c:/Me/Material/repos/EmbeddedCppDiploma/interfacing/stm32-workspace
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
@@ -87,7 +87,7 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 14668
+VSCODE_PID = 11440
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -119,7 +119,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\WindowsPowerShell\Scripts;C:\Program Files\CMake\bin;C:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\11.2 2022.02\bin;C:\Program Files (x86)\STMicroelectronics\stlink-1.7.0\bin;C:\Program Files\Java\jre1.8.0_341\bin;C:\OpenOCD-20211118-0.11.0\bin;C:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\11.2 2022.02\bin;C:\Users\MMohamedSaid\AppData\Local\Microsoft\WindowsApps;C:\Users\MMohamedSaid\AppData\Local\Programs\Git\cmd;C:\Users\MMohamedSaid\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\mingw64\bin;C:\Program Files\CMake\bin
+PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\WindowsPowerShell\Scripts;C:\Program Files\CMake\bin;C:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\11.2 2022.02\bin;C:\Program Files (x86)\STMicroelectronics\stlink-1.7.0\bin;C:\OpenOCD-20211118-0.11.0\bin;C:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\11.2 2022.02\bin;C:\Users\MMohamedSaid\AppData\Local\Microsoft\WindowsApps;C:\Users\MMohamedSaid\AppData\Local\Programs\Git\cmd;C:\Users\MMohamedSaid\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\mingw64\bin;C:\Program Files\CMake\bin
 # environment
 ZES_ENABLE_SYSMAN = 1
 # environment
@@ -179,19 +179,19 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Users\MMOHAM~1\AppData\Local\Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\f3beecbd77648f3e04c6e0e3a76d2a43-1.70.1-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\f3beecbd77648f3e04c6e0e3a76d2a43-1.70.2-main-sock
 # default
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
-# environment
-QIP12252 = 0
 # default
 SUFFIXES := 
 # environment
 ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
+# environment
+QIP12380 = 0
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
@@ -207,9 +207,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 
 # Directories
 
-# . (key c:/Me/Material/interfacing/RoboKit/stm32-workspace, mtime 1659815164): 7 files, no impossibilities.
+# . (key c:/Me/Material/repos/EmbeddedCppDiploma/interfacing/stm32-workspace, mtime 1660377292): 6 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -266,12 +266,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 14 / storage = 160 B / avg = 11 B
-# current buf: size = 8162 B / used = 160 B / count = 14 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 13 / storage = 155 B / avg = 11 B
+# current buf: size = 8162 B / used = 155 B / count = 13 / avg = 11 B
 
-# strcache performance: lookups = 17 / hit rate = 17%
+# strcache performance: lookups = 16 / hit rate = 18%
 # hash-table stats:
-# Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
-# Finished Make data base on Fri Aug 12 21:25:27 2022
+# Load=13/8192=0%, Rehash=0, Collisions=0/16=0%
+# Finished Make data base on Mon Aug 29 19:03:57 2022
 
  

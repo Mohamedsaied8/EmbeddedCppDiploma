@@ -26,6 +26,7 @@ private:
     GasolineSource *gasolineService = nullptr;
 
 public:
+    //dependency injection
     // The dependency for a source of gasoline is passed in
     // through constructor injection
     // as opposed to hard-coded into the class definition.
@@ -50,7 +51,7 @@ int main() {
     // racecar is independent from the implementation of the fuel service.
     // a gas station service is injected.
     Car racecar(stationService);
-    racecar.getGasoline();
+    racecar.getGasoline(); 
 
     // dune buggy is independent from the implementation of the fuel service.
     // a fuel can service is injected.
