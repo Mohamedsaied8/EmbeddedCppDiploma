@@ -24,20 +24,20 @@ void WaitMS();
  */
 int main(void)
 {  
-    LED leds;
+    LED led(GPIOC,GPIO_Pin_13);
 
     while (1)
     { 
-        if(!(GPIOB->IDR &(1<<3)))
+        if(!(GPIOB->IDR &(1<<5)))
         {
             WaitMS();   	
-            leds.LEDS_ON();
+            led.LED_ON();
             WaitMS();
       
         }
         else
         {
-            leds.LEDS_OFF();
+            led.LED_OFF();
         }	
 
 

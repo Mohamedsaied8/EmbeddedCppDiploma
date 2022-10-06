@@ -1,40 +1,87 @@
 #include <iostream>
-
+#include <vector>
 /*
 * Abstract class Shape:
     getDimension
     calculateArea
     displayArea
 
-* derive Circle
-
+* derived:
+* Circle
 * Square
 
-*pointer from shape to point to eatch object and use the functions by turn (Optional)
+*pointer from shape to point to each object and use the functions by turn (Optional)
 
 */
 
+//abstract class
 class Shape{
 
 public:
-    int dimension;
-
-     void getDimension()
-     {
-        std::cin >> dimension;
-     }
     virtual float calculateArea()=0; //pure virtual function
     virtual void displayArea()=0;
-  
+    virtual ~Shape()=default;
 };
 
-//class Circle
+class Circle : public Shape {
 
-//Square
+    public:
+    Circle(float radius) : m_radius(radius)
+    {
 
+    }
+
+    float calculateArea() override
+    {
+        constexpr double PI = 3.14;
+        m_area = 2* PI * m_radius * m_radius;
+        return m_area;
+    }
+
+    void displayArea()
+    {
+
+    }
+    private:
+         float m_radius;
+         float m_area;
+
+};
+
+class Rectangle : public Shape
+{
+    public:
+        float calculateArea() override
+        {
+            
+            return 0.0;
+        }
+
+        void displayArea()
+        {
+
+        } 
+};
+void drawShape(std::vector<Shape*> shapes)
+{
+    for(auto shape : shapes)
+    {
+        shape->calculateArea();
+        shape->displayArea();
+    }
+    
+}
+typedef std::vector<Shape*> ShapeListType;
 int main()
 {
-    
+    Shape * shape;
+    Circle circle(10.0);
+    Rectangle rect;
+    shape = &circle; 
+    ShapeListType shapes;
+    shapes.push_back(&circle);
+    shapes.push_back(&rect);
+    drawShape(shapes);
 
     return 0;
 }

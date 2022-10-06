@@ -3,12 +3,13 @@
 
 int main()
 {
-    char *name = "Robotics";
+    char *name = "Robotics"; // '\0'
     
-    int num = 10;
-    char letter = 'a';
+    int num = 10; // 4 byte
+    char letter = 'a'; //1 byte
 
     char *ptr = &letter;
+
     int *ptr2 = &num;
 
     double stepSize = 554.558;

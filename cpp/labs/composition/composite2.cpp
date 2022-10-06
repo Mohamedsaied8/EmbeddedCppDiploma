@@ -45,11 +45,12 @@ class Picture : public Graphic {
 public:
   void draw() const {
     // for each element in gList, call the draw member function
-     for_each(gList.begin(), gList.end(), mem_fun(&Graphic::draw)); 
+    for_each(gList.begin(), gList.end(), mem_fun(&Graphic::draw));    
+
   }
 
   void add(Graphic *aGraphic) {
-    gList.push_back(aGraphic);
+    gList.push_back(aGraphic); 
   }
  
 private:
@@ -59,12 +60,13 @@ private:
 int main()
 {
   Line line;
-  line.draw();
   Rectangle rect;
-  rect.draw();
   Text text;
+/*
+  line.draw();
+  rect.draw();
   text.draw();
-
+*/
   Picture pic;
   pic.add(&line);
   pic.add(&rect);

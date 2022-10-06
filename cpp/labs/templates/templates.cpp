@@ -1,10 +1,12 @@
 #include <iostream>
 #include "stack.h"
 using namespace std ;
+
 int main()
 {
+	Stack<float> fs(5);
 
-	Stack<float> fs(5) ;
+	
 	float f = 1.1 ;
 	cout << "Pushing elements onto fs" << endl ;
 
@@ -25,8 +27,8 @@ int main()
 	cout << endl << "Stack Empty" << endl ;
 	cout << endl ;
 
-	Stack<int> is ;
-	int i = 1.1 ;
+	Stack<int> is(3);
+	int i = 1;
 	cout << "Pushing elements onto is" << endl ;
 	while (is.push(i))
 	{
@@ -38,6 +40,6 @@ int main()
 	while (is.pop(i))
 			cout << i << ' ' ;
 	cout << endl << "Stack Empty" << endl ;
-
+	
     return 0;
 }

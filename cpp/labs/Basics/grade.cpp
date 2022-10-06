@@ -43,7 +43,6 @@ int main()
     Grade::welcomeScreen();
     std::uint16_t grade=0;
     std::cin >> grade;
-
     Grade::gradeEvaluation(grade); 
 
 

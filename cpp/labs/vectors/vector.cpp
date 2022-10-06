@@ -26,13 +26,17 @@ int main()
     std::vector<int> v(3);
 
     inputVector(v);
+    std::cout <<"Vector's size: " << v.size() << " capacity: "<< v.capacity() << std::endl;
+
     v.push_back(9);
-    v.push_back(9);
+    v.push_back(15);
 
     outputVector(v);
-  
-    std::cout <<"Vector's size: " << v.size() << "capacity: "<< v.capacity() << std::endl;
-
+    
+    std::cout <<"Vector's size: " << v.size() << " capacity: "<< v.capacity() << std::endl;
+    v.push_back(17);
+    v.push_back(18);
+    std::cout <<"Vector's size: " << v.size() << " capacity: "<< v.capacity() << std::endl;
 
     return 0;
 }

@@ -10,20 +10,21 @@ struct Record
     string address;
 };
 
-//template function
+/*
+template function
 template <class T>
 void sort(T::iterator &first, T::iterator &second,std::function<T> comp)
 {
     //
 
-}
+}*/
 
 int main()
 {
     vector<Record> vr(2);
     cout <<"strategy pattern example\n";
-    vr[0].name = "Mohamed";
-    vr[0].address = "Maadi";
+    vr[0].name = "Abanob";
+    vr[0].address = "Alamin";
 
     vr[1].name = "Samir";
     vr[1].address = "aa";

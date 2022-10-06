@@ -20,6 +20,7 @@ class Complex
 
 friend std::ostream& operator<<(std::ostream& output,Complex const& complex);
 
+
 Complex& operator+(Complex  const &rhs)
 {
 

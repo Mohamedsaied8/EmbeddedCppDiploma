@@ -3,6 +3,6 @@
 
 int main()
 {
-    int x =2;
+    Date date;
     return 0;
 }

@@ -1,7 +1,7 @@
 C = gcc
 CC = g++
-SRC = Date.cpp testDate.cpp
 OBJS = Date.o testDate.o 
+SRC = $(OBJS, .o=.c)
 
 testDate: $(OBJS) 
 	$(CC) -o testDate Date.o testDate.o 

@@ -1,15 +1,25 @@
 #include <iostream>
 
-template <class M>
-M max(M a,M b)
+template <class T>
+T max(T a,T b)
 {
-    return a>b?a:b; //ternary operator
+    return a>b? a:b; //ternary operator
 }
+
+template <class T>
+void swap(T& x, T& y)
+{
+    T tmp = x;
+    x = y;
+    y= tmp;
+}
+
 int main()
 {
-
-    std::cout << max(5,3) << std::endl;
-
-
+    int n1 = 5;
+    int n2 = 7;
+    swap(n1,n2);
+    
+    std::cout << "max is " <<max(5,3) << std::endl;
     return 0;
 }

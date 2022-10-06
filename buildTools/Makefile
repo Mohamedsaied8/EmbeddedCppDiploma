@@ -1,9 +1,6 @@
 C = gcc
 CC = g++
 
-.PHONY: all
-all: testdate
-
 testdate: Date.o testDate.o 
 	$(CC) -o testdate testDate.o Date.o
 
@@ -20,5 +17,6 @@ cleanall : cleanobj
 	del	*.exe 
 
 cleanobj :
-	del	*.o
+	del	*.o	
+
 

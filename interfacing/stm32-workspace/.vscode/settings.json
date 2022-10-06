@@ -40,6 +40,10 @@
         "xutility": "cpp",
         "cctype": "cpp",
         "string": "cpp",
-        "stm32f10x.h": "c"
+        "stm32f10x.h": "c",
+        "array": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "functional": "cpp"
     }
 }
