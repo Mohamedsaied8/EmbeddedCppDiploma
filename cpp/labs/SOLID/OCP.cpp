@@ -19,7 +19,7 @@ struct Product
 	std::string		m_Name;
 	Color			m_Color;
 	Size			m_Size;
-
+	
 };
 
 
@@ -128,7 +128,7 @@ struct SizeAndColorSpecification : public ISpecification<Product>
 
 	bool is_specification(Product* s) override
 	{
-		return (size.is_specification(s)&& color.is_specification(s));
+		return (size.is_specification(s) && color.is_specification(s));
 	}
 };
 

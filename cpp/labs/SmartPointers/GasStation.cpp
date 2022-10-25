@@ -8,14 +8,14 @@ public:
 
 class GasStation : public GasolineSource {
 public:
-    virtual void FuelUp() {
+    void FuelUp() {
         std::cout << "Pumping gas at gas station" << std::endl;
     }
 };
 
 class FuelCan : public GasolineSource {
 public:
-    virtual void FuelUp() {
+    void FuelUp() {
         std::cout << "Pumping gas from fuel can" << std::endl;
     }
 };

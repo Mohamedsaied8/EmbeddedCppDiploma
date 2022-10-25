@@ -25,7 +25,7 @@ void print(Node *Head)
 {
     while(Head)
     {
-         cout << Head->record.name << endl;  
+         cout << Head->record.name << endl;        
          Head = Head->Next;
     }
 }

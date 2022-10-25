@@ -8,6 +8,7 @@
  * stm32f4xx_conf.h, which includes stm32f4xx_gpio.h
  */
 #include "led.h"
+#include "alarm.h"
 extern "C"
 {
 //#include "stm32f4_discovery.h"
@@ -16,30 +17,27 @@ extern "C"
 }
 void WaitMS();
 
-/* Main function, the entry point of this program.
- * The main function is called from the startup code in file
- * Libraries/CMSIS/ST/STM32F4xx/Source/Templates/TrueSTUDIO/startup_stm32f4xx.s
- * (line 101)
- *       
- */
+
 int main(void)
 {  
-    LED led(GPIOC,GPIO_Pin_13);
+     LED leds;
+     hal::Buzzer buzzer(GPIOB,GPIO_Pin_9);
+     Vehicle::Alarm alarm(&buzzer);
 
     while (1)
     { 
-        if(!(GPIOB->IDR &(1<<5)))
+        
+        if(!(GPIOB->IDR & (1<< 5)))
         {
-            WaitMS();   	
-            led.LED_ON();
+            leds.LEDS_ON();
+            alarm.setAlarm(true);
             WaitMS();
-      
         }
         else
-        {
-            led.LED_OFF();
-        }	
-
+        {           
+            alarm.setAlarm(false);
+            leds.LEDS_OFF();
+        }
 
     }
 

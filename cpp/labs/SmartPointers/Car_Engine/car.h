@@ -10,6 +10,7 @@ public:
     }
 
     void Drive();
+    void Stop();
 private:
-    std::unique_ptr<IEngine> m_engine;
+    std::unique_ptr<IEngine> m_engine; 
 };

@@ -16,16 +16,16 @@ public:
     String(const String& other)
     {
       printf("Copied\n");
-      mSize = other.mSize;
-      m_data = new char[mSize];
-      memcpy(m_data,other.m_data,mSize);
+      this->mSize = other.mSize;
+      this->m_data = new char[mSize];
+      memcpy(this->m_data, other.m_data, mSize);
     }
-
+    
     String(String&& other)
     {
       printf("Move\n");
-      mSize = other.mSize;
-      m_data = other.m_data;
+      this->mSize = other.mSize;
+      this->m_data = other.m_data;
      
       other.mSize = 0;
       other.m_data = nullptr;
@@ -58,6 +58,7 @@ public:
     {
 
     }
+
     Entity(String&& name) : mName(std::move(name))
     {
 

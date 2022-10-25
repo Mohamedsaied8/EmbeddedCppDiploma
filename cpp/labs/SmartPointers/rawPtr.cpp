@@ -22,7 +22,7 @@ int size;
 char* global_Function()
 {
     char *p = (char *) malloc(sizeof(char)*10); //malloc or new //10 bytes -> Heap memory
-    delete p;
+   // delete p;
     return p;
 }
 int main()
@@ -39,10 +39,9 @@ int main()
         p[5] = '\0';
 
         printf("%s",p);
-
+        
         delete p;
         delete p; //double free
-
     }
 
     return 0;

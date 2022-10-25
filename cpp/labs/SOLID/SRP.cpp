@@ -33,7 +33,6 @@ struct Journal //:public IJournal*/
 		std::ofstream ofs(filename);
 		for (auto& s : m_entries)
 			ofs << s.c_str() << std::endl;
-
 	}
 };
 
@@ -72,8 +71,8 @@ auto main(int  argc,char** argv)-> int
 }
 
 
-//struct IJournal
-//{
+struct IJournal
+{
 //	std::string m_title;
 //	std::vector<std::string> m_entries;
 //	virtual void add(const std::string& entry) = 0;

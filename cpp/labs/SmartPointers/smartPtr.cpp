@@ -7,7 +7,10 @@
     public:
         // Constructor: Refer https:// www.geeksforgeeks.org/g-fact-93/
         // for use of explicit keyword
-        explicit SmartPtr(int* p = NULL) { ptr = p; }
+        explicit SmartPtr(int* p = NULL) 
+        {
+             ptr = p; 
+        }
     
         // Destructor
         ~SmartPtr() { delete (ptr); }

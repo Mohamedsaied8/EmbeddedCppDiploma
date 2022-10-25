@@ -7,5 +7,3 @@ struct IEngine
     virtual void Stop() = 0;
     virtual ~IEngine() = default;
 };
-
-std::unique_ptr<IEngine> MakeV8Engine();

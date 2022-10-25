@@ -1,14 +1,14 @@
 # Name of the binaries.
 PROJ_NAME=stm32f1-template
 MKDIR = "C:\Program Files (x86)\Git\bin\mkdir.exe" -p
-
+WORKSPACE_ROOT = C:/Me/Material/interfacing/RoboKit/stm32-workspace/stm32f1-template
 ######################################################################
 #                         SETUP TOOLS                                #
 ######################################################################
 
 # This is the path to the toolchain
 # (we don't put our toolchain on $PATH to keep the system clean)
-TOOLS_DIR = 'C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/11.2 2022.02\bin'
+TOOLS_DIR = 'C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/11.2 2022.02/bin'
 #/opt/gcc-arm-embedded/gcc-arm-none-eabi-5_2-2015q4/bin
 
 # The tools we use
@@ -32,11 +32,12 @@ DEFS    = -DUSE_STDPERIPH_DRIVER
 
 ##### Assembler options
 
-AFLAGS  = -mcpu=cortex-m4
+AFLAGS  = -mcpu=cortex-m3
 AFLAGS += -mthumb
 AFLAGS += -mthumb-interwork
 AFLAGS += -mlittle-endian
-AFLAGS += -mfloat-abi=soft
+#AFLAGS += -mfloat-abi=hard
+ASFLAGS +=-mfloat-abi=softfp
 AFLAGS += -mfpu=fpv4-sp-d16
 
 ## Compiler options
@@ -113,7 +114,7 @@ SRCS  += system_stm32f10x.c
 # The assembly code in this file is the first one to be
 # executed. Normally you do not change this file.
 ASRC = startup_stm32f10x.s
-CPP_SRCS = crt0.cpp crt0_init_ram.cpp crt1.cpp int_vect.cpp led.cpp main.cpp
+CPP_SRCS = crt0.cpp crt0_init_ram.cpp crt1.cpp int_vect.cpp led.cpp buzzer.cpp alarm.cpp app_relay.cpp
 # in case we have to many sources and don't want
 # to compile all sources every time
 OBJS = $(SRCS:.c=.o)
@@ -128,7 +129,7 @@ OBJS += $(STM_SRC_DIR_C:.c=.o)
 ######################################################################
 
 TEMP_DIR = ./temp
-OUT_DIR = ./out
+OUT_DIR = $(WORKSPACE_ROOT)/out
 
 .PHONY: all
 

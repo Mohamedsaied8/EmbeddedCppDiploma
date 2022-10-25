@@ -19,7 +19,7 @@ int main(){
   
   std::cout << std::endl;
   int value = 1998;
-  //std::shared_ptr<int> firSha(new int(value));
+  std::shared_ptr<int> firSha(new int(value));
 
   auto firSha = std::make_shared<int>(1998);
   auto secSha = firSha; //copy constructor

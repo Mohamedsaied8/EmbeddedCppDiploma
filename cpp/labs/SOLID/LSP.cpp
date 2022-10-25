@@ -1,15 +1,15 @@
 #include <iostream>
-//
-//struct Shape
-//{
-//	int m_Width;
-//	int m_Height;
-//	virtual int width() const = 0;
-//	virtual void set_width(int m_width) = 0;
-//	virtual int height() const = 0;
-//	virtual void set_height(int m_height) = 0;
-//	virtual int Area()const = 0;
-//};
+
+ struct Shape
+ {
+ 	int m_Width;
+ 	int m_Height;
+ 	virtual int width() const = 0;
+ 	virtual void set_width(int m_width) = 0;
+ 	virtual int height() const = 0;
+  	virtual void set_height(int m_height) = 0;
+ 	virtual int Area()const = 0;
+ };
 
 
 /// <summary>
@@ -90,8 +90,8 @@ struct Square : public Rectangle   //: public Shape
 
 void process (Rectangle& r)
 {
-	int w = r.width();
-	r.set_height(10);
+	int w = r.width(); //5
+	r.set_height(10); //height =10 , width = 10
 	std::cout << "expect area = " << (w * 10) << " , got " << r.Area() << std::endl;
 }
 

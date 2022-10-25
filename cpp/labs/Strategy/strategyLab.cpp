@@ -15,7 +15,7 @@ struct BMW : Strategy
 {
     void calculateSpeed()
     {
-        //alorithm
+       cout << "BMW\n";
     }
 
 };
@@ -24,7 +24,7 @@ struct MiniCoper : Strategy
 {
     void calculateSpeed()
     {
-        //alorithm
+        cout << "Mini Coper\n";
     }
 
 };
@@ -45,12 +45,15 @@ struct Vehicle
     Strategy *strategy;  
 };
 
+
 int main()
 {
    BMW bmw;
    MiniCoper mini;
-   Vehicle car1(&bmw);
+   Vehicle E36(&bmw);
    Vehicle car2(&mini);
+
+    car2.vehicleSpeed();
 
     return 0;
 }

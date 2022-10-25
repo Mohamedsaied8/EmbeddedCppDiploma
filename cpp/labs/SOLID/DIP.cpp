@@ -81,17 +81,16 @@ struct Car
 
 int main (int argc, char ** argv)
 {
-
-	//auto e = std::make_shared<Engine>();
-	//auto c = std::make_shared<Car>(e);
-	
 	using namespace boost::di;
 	auto injector = make_injector(bind<ILogger>().to<ConsoleLogger>());
 	auto c = injector.create<std::shared_ptr<Car>>();
 	c->engine->voulme = 5;
 	std::cout << *c<<std::endl;
 
-	getchar();
+	auto engine = std::make_shared<Engine>();
+	auto console = std::make_shared<ConsoleLogger>();
+	auto bmw = std::make_shared<Car>(engine,console);
 
+	//TODO: values
 	return 1;
 }

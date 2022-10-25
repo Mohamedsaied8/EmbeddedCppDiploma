@@ -7,6 +7,8 @@ using namespace std;
 
 int main()
 {
+	map<string, int> myMap;
+	myMap.insert(pair<string, int>("Mohamed", 40)); 
 
 	// empty map container
 	map<int, int> quiz;
@@ -14,7 +16,7 @@ int main()
 	// insert elements in random order
 	quiz.insert(pair<int, int>(1, 40)); //make_pair(1,40s)
 	quiz.insert(pair<int, int>(2, 30));
-	quiz.insert(pair<int, int>(3, 60));
+	quiz.insert(pair<int, int>(3, 50));
 	quiz.insert(pair<int, int>(4, 20));
 	quiz.insert(pair<int, int>(5, 50));
 	quiz.insert(pair<int, int>(6, 50));
@@ -72,13 +74,13 @@ int main()
 	// lower bound and upper bound for map gquiz1 key = 5
 	cout << "gquiz1.lower_bound(5) : "
 		<< "\tKEY = ";
-	cout << quiz.lower_bound(5)->first << '\t';
-	cout << "\tELEMENT = " << quiz.lower_bound(5)->second
+	cout << quiz2.lower_bound(5)->first << '\t';
+	cout << "\tELEMENT = " << quiz2.lower_bound(5)->second
 		<< endl;
 	cout << "gquiz1.upper_bound(5) : "
 		<< "\tKEY = ";
-	cout << quiz.upper_bound(5)->first << '\t';
-	cout << "\tELEMENT = " << quiz.upper_bound(5)->second
+	cout << quiz2.upper_bound(5)->first << '\t';
+	cout << "\tELEMENT = " << quiz2.upper_bound(5)->second
 		<< endl;
 
 	return 0;
