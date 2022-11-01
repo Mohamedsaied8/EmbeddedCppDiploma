@@ -15,6 +15,7 @@ class myClass
      }
 };
 int myClass::i = 0; 
+
 int main()
 {
   myClass obj1;

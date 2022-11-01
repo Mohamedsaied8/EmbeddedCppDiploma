@@ -43,13 +43,18 @@ public:
 	// Forward calls to the RealSubject:
 	void request() 
 	{ 
+		//do something
 		realSubject->request(); 
 	}
 };
  
+ void run()
+ {
+	Proxy p;
+	p.request();
+ }
 
 int main() 
 {
-	Proxy p;
-	p.request();
+	run();
 }

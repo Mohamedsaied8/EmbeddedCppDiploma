@@ -38,7 +38,7 @@ class RectangleAdapter: public Rectangle, private LegacyRectangle
 {
   public:
     RectangleAdapter(int x, int y, int w, int h):
-      LegacyRectangle(x, y, x + w, y + h) {
+         LegacyRectangle(x, y, x + w, y + h) {
          std::cout << "RectangleAdapter(x,y,x+w,x+h)\n";
       }  
     void draw() {

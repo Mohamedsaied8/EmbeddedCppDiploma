@@ -1,0 +1,10 @@
+../Core/Src/main.cpp:51:2:Button::Button(GPIO_TypeDef*, uint16_t)	24	static
+../Core/Src/main.cpp:56:11:uint32_t Button::GetButtonStatus()	16	static
+../Core/Src/main.cpp:69:2:LED::LED()	16	static
+../Core/Src/main.cpp:95:2:Motor::Motor(MotorType*)	16	static
+../Core/Src/main.cpp:100:7:void Motor::Motor_CW()	16	static
+../Core/Src/main.cpp:107:7:void Motor::Motor_CCW()	16	static
+../Core/Src/main.cpp:115:7:void Motor::Motor_Stop()	16	static
+../Core/Src/main.cpp:167:5:int main()	24	static
+../Core/Src/main.cpp:199:6:void SystemClock_Config()	72	static
+../Core/Src/main.cpp:239:6:void Error_Handler()	4	static,ignoring_inline_asm

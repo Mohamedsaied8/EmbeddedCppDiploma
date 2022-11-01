@@ -5,8 +5,7 @@
 class Subject; 
 
 class Observer 
-{ 
-    
+{   
 public:
 
     virtual ~Observer() = default;
@@ -77,7 +76,7 @@ public:
      void Update(Subject& theChangedSubject) override
      {
         if (&theChangedSubject == &subject) 
-        {
+        {         
              Draw();
         }
      }
