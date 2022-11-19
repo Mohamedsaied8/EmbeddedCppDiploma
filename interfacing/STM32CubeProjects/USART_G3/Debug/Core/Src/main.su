@@ -1,0 +1,8 @@
+../Core/Src/main.c:50:6:LED_ON	4	static
+../Core/Src/main.c:54:6:LED_OFF	4	static
+../Core/Src/main.c:58:6:LED_Init	4	static
+../Core/Src/main.c:66:6:USART_sendChar	16	static
+../Core/Src/main.c:72:6:USART_sendString	24	static
+../Core/Src/main.c:82:5:main	32	static
+../Core/Src/main.c:121:6:SystemClock_Config	72	static
+../Core/Src/main.c:161:6:Error_Handler	4	static,ignoring_inline_asm
