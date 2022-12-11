@@ -11,10 +11,9 @@
 #include "alarm.h"
 extern "C"
 {
-//#include "stm32f4_discovery.h"
-//#include "stm32f4xx_conf.h"
 #include "stm32f10x.h"
 }
+
 void WaitMS();
 
 
@@ -27,7 +26,7 @@ int main(void)
     while (1)
     { 
         
-        if(!(GPIOB->IDR & (1<< 5)))
+        if(!(GPIOB->IDR & (1<< 5))) // PB5 0000 0000 0010 0000
         {
             leds.LEDS_ON();
             alarm.setAlarm(true);

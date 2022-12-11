@@ -11,7 +11,7 @@ namespace hal{
     class Buzzer
     {
         public:
-            Buzzer(GPIO_TypeDef *GPIOx,uint32_t pin);
+            Buzzer(GPIO_TypeDef *GPIOx, uint32_t pin);
             void Buzzer_Init();
             void Buzzer_On();
             void Buzzer_Off();

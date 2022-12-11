@@ -29,13 +29,12 @@ class Relay
     }
     void RelayON()
     {
-        Relay_Port->ODR = (1<<Relay_Pin_Output);
+       Relay_Port->ODR = (1<<Relay_Pin_Output);
     }
     void RelayOFF()
     {
         Relay_Port->ODR &= ~(1<<Relay_Pin_Output);
     }
-
     private:
     GPIO_TypeDef *Relay_Port;
     uint32_t Relay_Pin_Configuration;

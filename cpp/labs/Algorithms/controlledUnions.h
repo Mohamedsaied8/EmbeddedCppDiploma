@@ -11,8 +11,9 @@ class Entry {
   Entry(){};
   Entry(std::string name, int num)
       : _name{name}, _type{Tag::number}, _number{num} {};
+      
   Entry(std::string name, std::string str) : _name{name}, _type{Tag::text} {
-    new (&_text) std::string{str};  // NOLINT
+    new (&_text) std::string{str};  
   };
   ~Entry();                        // non-default destructor
   Entry(const Entry&);             // copy constructor
@@ -32,10 +33,12 @@ class Entry {
   std::string _name;
   enum class Tag { number, text };
   Tag _type;
+
   union {
     int _number;
     std::string _text;
   };
+  
 };
 
 #endif

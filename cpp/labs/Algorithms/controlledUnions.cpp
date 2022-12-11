@@ -6,13 +6,13 @@
 int Entry::Number() const {
   std::cout << "Read number" << std::endl;
   if (_type != Tag::number) throw bad_entry{};
-  return _number;  // NOLINT
+  return _number;   
 };
 
 std::string Entry::Text() const {
   std::cout << "Read text" << std::endl;
   if (_type != Tag::text) throw bad_entry{};
-  return _text;  // NOLINT
+  return _text;  
 };
 
 void Entry::Number(int num) {
@@ -21,16 +21,15 @@ void Entry::Number(int num) {
     _text.std::string::~string();  // explicitly destroy string //NOLINT
     _type = Tag::number;
   }
-  _number = num;  // NOLINT
+  _number = num;  
 }
 
 void Entry::Text(const std::string& str) {
   std::cout << "Write text" << std::endl;
   if (_type == Tag::text)
-    _text = str;  // NOLINT
+    _text = str;  
   else {
-    new (&_text)           // NOLINT
-        std::string{str};  // placement new: explicitly construct string
+    new (&_text) std::string{str};  // placement new: explicitly construct string
     _type = Tag::text;
   }
 }
@@ -87,11 +86,19 @@ union combinedData
 };
 
 int main() {
-  combinedData cdata;
+  //combinedData cdata;
+  
   Entry entry1{"Temperature", 40};
   Entry entry2{"Car Model", "BMW"};
+  try
+  {
+  int number = entry1.Number();
+  }
+  catch(const std::exception& e)
+  {
+    std::cerr << e.what() << '\n';
+  }
 
-  entry1.Number();
   entry2.Text();
 
   Entry entry3{entry1};
