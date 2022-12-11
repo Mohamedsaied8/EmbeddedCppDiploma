@@ -1,0 +1,219 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;@ STM32F103 - Assembly template
+    2 00000000         ;@ Turns on GPIOD Pin 1
+    3 00000000         
+    4 00000000         ;@ Start with enabling thumb 32 mode since Cortex-M3 do 
+                       not work with arm mode
+    5 00000000         ;@ Unified syntax is used to enable good of the both wor
+                       ds...
+    6 00000000         ;@ Make sure to run arm-none-eabi-objdump.exe -d prj1.el
+                       f to check if
+    7 00000000         ;@ the assembler used proper insturctions. (Like ADDS)
+    8 00000000         
+    9 00000000         ;The semicolon is used to lead an inline documentation.
+   10 00000000         ;This is the first ARM Assembly language program you see
+                        in the lab.
+   11 00000000         ;This program skeleton was from Dave Duguid and Trevor D
+                       ouglas in summer 2013.
+   12 00000000         ;When you write your program, you could have your info a
+                       t the top document block.
+   13 00000000         ;For Example:  Your Name, Student Number, what the progr
+                       am is for, and what it does etc.
+   14 00000000         
+   15 00000000         ;;; Directives
+   16 00000000                 PRESERVE8
+   17 00000000                 THUMB
+   18 00000000         
+   19 00000000         ; Vector Table Mapped to Address 0 at Reset
+   20 00000000         ; Linker requires __Vectors to be exported
+   21 00000000         
+   22 00000000                 AREA             RESET, DATA, READONLY
+   23 00000000                 EXPORT           __Vectors
+   24 00000000         
+   25 00000000         __Vectors
+   26 00000000 20001000        DCD              0x20001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+   27 00000004         ;The processor uses a full descending stack. 
+   28 00000004         ;This means the stack pointer holds the address of the l
+                       ast 
+   29 00000004         ;stacked item in memory. When the processor pushes a new
+                        item 
+   30 00000004         ;onto the stack, it decrements the stack pointer and the
+                       n 
+   31 00000004         ;writes the item to the new memory location.
+   32 00000004         
+   33 00000004 00000000        DCD              Reset_Handler ; reset vector
+   34 00000008         
+   35 00000008                 ALIGN
+   36 00000008         
+   37 00000008         ; The program
+   38 00000008         ; Linker requires Reset_Handler
+   39 00000008         
+   40 00000008                 AREA             MYCODE, CODE, READONLY
+   41 00000000         
+   42 00000000                 ENTRY
+   43 00000000                 EXPORT           Reset_Handler
+   44 00000000         
+   45 00000000         
+   46 00000000         Reset_Handler
+   47 00000000         ;;;;;;;;;;User Code Starts from the next line;;;;;;;;;;;
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                       ;
+   48 00000000         
+   49 00000000         
+   50 00000000 F04F 000C       MOV              R0, #12
+   51 00000004         ;@ Enable GPIOD Peripheral Clock (Page 145 from RM0008)
+   52 00000004 4E0E            LDR              R6, = 0x40021018 ;APB2_ENR @ Lo
+                                                            ad peripheral clock
+                                                             enable regiser
+   53 00000006 6835            LDR              R5, [R6]    ;@ Read its content
+                                                            
+   54 00000008 F045 0520       ORR              R5, 0x00000020 ;@ Set Bit 5 to 
+                                                            enable GPIOD clock 
+                                                            10 0000
+   55 0000000C 6035            STR              R5, [R6]    ;@ Store back the r
+                                                            esult in Perihperal
+                                                             clock enable regis
+                                                            ter
+   56 0000000E         
+   57 0000000E         ;@ Make GIOOD Pin1 as output pin (Page 170 from RM0008)
+   58 0000000E 4E0D            LDR              R6, = 0x40011400 ;@ Load GPIOD 
+                                                            control register lo
+                                                            w  (Pin1 is in CRL 
+                                                            register)
+   59 00000010 F04F 0520       LDR              R5, = 0x00000020 ;@ Set MODE bi
+                                                            ts to 10 and CNF bi
+                                                            ts to 00, thus 0x00
+                                                            000020
+   60 00000014 6035            STR              R5, [R6]    ;@ Store back the r
+                                                            esult in GPIOD cont
+                                                            rol register low
+   61 00000016         
+   62 00000016         ;@ Set GIOOD Pin1 to 1 (Page 172 from RM0008)
+   63 00000016 4E0C            LDR              R6, = 0x4001140C ;@ Load GPIOD 
+                                                            output data registe
+                                                            r
+   64 00000018 F04F 0502       LDR              R5, = 0x00000002 
+                                                            ;@ Set Pin 1 to 1
+   65 0000001C 6035            STR              R5, [R6]    ;@ Store back the r
+                                                            esult in GPIOD outp
+                                                            ut data register
+   66 0000001E         
+   67 0000001E BF00            NOP
+   68 00000020 BF00            NOP
+   69 00000022 F04F 0500       LDR              R5, = 0x00000000 ;@ Set MODE bi
+                                                            ts to 10 and CNF bi
+                                                            ts to 00, thus 0x00
+                                                            000020
+   70 00000026 6035            STR              R5, [R6]    ;@ Store back the r
+                                                            esult in GPIOD outp
+                                                            ut data register
+   71 00000028         
+   72 00000028         
+   73 00000028         LOOP
+   74 00000028         ;@ Set GIOOD Pin1 to 1 (Page 172 from RM0008)
+   75 00000028 4E07            LDR              R6, = 0x4001140C ;@ Load GPIOD 
+                                                            output data registe
+                                                            r
+   76 0000002A F04F 0502       LDR              R5, = 0x00000002 
+                                                            ;@ Set Pin 1 to 1
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   77 0000002E 6035            STR              R5, [R6]    ;@ Store back the r
+                                                            esult in GPIOD outp
+                                                            ut data register
+   78 00000030         
+   79 00000030 BF00            NOP
+   80 00000032 BF00            NOP
+   81 00000034 F04F 0500       LDR              R5, = 0x00000000 ;@ Set MODE bi
+                                                            ts to 10 and CNF bi
+                                                            ts to 00, thus 0x00
+                                                            000020
+   82 00000038 6035            STR              R5, [R6]    ;@ Store back the r
+                                                            esult in GPIOD outp
+                                                            ut data register
+   83 0000003A         
+   84 0000003A F100 0004       ADD              R0, R0, #4
+   85 0000003E E7F3            B                LOOP
+   86 00000040         
+   87 00000040                 END                          ;End of the program
+                                                            
+              40021018 
+              40011400 
+              4001140C 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\app.d -o.\objects\app.o -I.\RTE\_Target_1 -IC:\Keil_v5\A
+RM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include -IC:\Keil_v5\ARM\CMSIS\Include 
+--predefine="__UVISION_VERSION SETA 526" --predefine="STM32F10X_MD SETA 1" --li
+st=.\listings\app.lst app.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 22 in file app.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 25 in file app.s
+   Uses
+      At line 23 in file app.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP 00000028
+
+Symbol: LOOP
+   Definitions
+      At line 73 in file app.s
+   Uses
+      At line 85 in file app.s
+Comment: LOOP used once
+MYCODE 00000000
+
+Symbol: MYCODE
+   Definitions
+      At line 40 in file app.s
+   Uses
+      None
+Comment: MYCODE unused
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 46 in file app.s
+   Uses
+      At line 33 in file app.s
+      At line 43 in file app.s
+
+3 symbols
+339 symbols in table

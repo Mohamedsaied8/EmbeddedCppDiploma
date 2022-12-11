@@ -1,0 +1,45 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mohamed Saied, Robotics Corner, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMSTM.DLL V1.69.1.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TARMSTM.DLL V1.67.1.0
+ 
+<h2>Project:</h2>
+C:\Me\stm32_interfacing\Leds\Leds.uvproj
+Project File Date:  09/22/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f10x_md.s...
+main.c(1): warning: In file included from...
+C:/Keil_v5/ARM/INC/ST/STM32F10x\stm32f10x.h(483): warning: In file included from...
+C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(122): warning: "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)" [-W#warnings]
+    #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+     ^
+1 warning generated.
+compiling main.c...
+linking...
+Program Size: Code=348 RO-data=252 RW-data=0 ZI-data=1632  
+FromELF: creating hex file...
+".\Objects\Leds.axf" - 0 Error(s), 1 Warning(s).
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

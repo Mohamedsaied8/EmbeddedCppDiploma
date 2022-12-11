@@ -1,0 +1,2 @@
+Dependencies for Project 'start', Target 'Target 1': (DO NOT MODIFY !)
+F (.\app.s)(0x5C9F8D96)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 526" --pd "STM32F10X_MD SETA 1"--list .\listings\app.lst --xref -o .\objects\app.o --depend .\objects\app.d)

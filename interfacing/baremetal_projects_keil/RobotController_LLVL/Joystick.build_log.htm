@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.26.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mohamed Saied, AMIT, LIC=S5IJJ-U8WA1-34CST-RXU7U-EXBRK-F5UBH
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.26.2.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.26.2.0
+Dialog DLL:      DARMSTM.DLL V1.68.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.5.0
+Dialog DLL:      TARMSTM.DLL V1.66.0.0
+ 
+<h2>Project:</h2>
+G:\data\ARM Material\stm32_interfacing\RobotController_LLVL\Joystick.uvproj
+Project File Date:  05/09/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f10x_md.s...
+compiling main.c...
+C:\Keil_v5\ARM\INC\ST\STM32F10x\stm32f10x.h(56): warning:  #2775-D: white space is required between the macro name "STM32F10X_MD" and its replacement text
+   #define STM32F10X_MD) 
+C:\Keil_v5\ARM\INC\ST\STM32F10x\stm32f10x.h(58): warning:  #9-D: nested comment is not allowed
+  /** @addtogroup Library_configuration_section
+main.c(14): warning:  #1295-D: Deprecated declaration Clock_72 - give arg types
+  void Clock_72();
+main.c(16): warning:  #1295-D: Deprecated declaration adcRead - give arg types
+  int adcRead();
+main.c(17): warning:  #1295-D: Deprecated declaration adcInit_Ch1 - give arg types
+  void adcInit_Ch1();
+main.c(18): warning:  #1295-D: Deprecated declaration adcRead_0 - give arg types
+  int adcRead_0();
+main.c(19): warning:  #1295-D: Deprecated declaration adcInit_Ch0 - give arg types
+  void adcInit_Ch0();
+main.c(46): warning:  #111-D: statement is unreachable
+  	return 0;
+main.c(159): warning:  #1-D: last line of file ends without a newline
+  	}
+main.c: 9 warnings, 0 errors
+linking...
+Program Size: Code=1704 RO-data=268 RW-data=20 ZI-data=1652  
+".\Joystick.axf" - 0 Error(s), 9 Warning(s).
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

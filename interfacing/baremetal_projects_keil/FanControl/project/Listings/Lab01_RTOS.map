@@ -1,0 +1,776 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35b7]
+
+==============================================================================
+
+Section Cross References
+
+    stm32f10x.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    stm32f10x.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    stm32f10x.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    stm32f10x.o(RESET) refers to stm32f10x.o(STACK) for __initial_sp
+    stm32f10x.o(RESET) refers to stm32f10x.o(.text) for Reset_Handler
+    stm32f10x.o(RESET) refers to port.o(.emb_text) for vPortSVCHandler
+    stm32f10x.o(RESET) refers to port.o(i.xPortSysTickHandler) for xPortSysTickHandler
+    stm32f10x.o(RESET) refers to myspi.o(i.DMAChannel2_IRQHandler) for DMAChannel2_IRQHandler
+    stm32f10x.o(RESET) refers to myspi.o(i.DMAChannel3_IRQHandler) for DMAChannel3_IRQHandler
+    stm32f10x.o(RESET) refers to myspi.o(i.DMAChannel4_IRQHandler) for DMAChannel4_IRQHandler
+    stm32f10x.o(RESET) refers to myspi.o(i.DMAChannel5_IRQHandler) for DMAChannel5_IRQHandler
+    stm32f10x.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    stm32f10x.o(.text) refers to __main.o(!!!main) for __main
+    stm32f10x.o(.text) refers to stm32f10x.o(HEAP) for Heap_Mem
+    stm32f10x.o(.text) refers to stm32f10x.o(STACK) for Stack_Mem
+    main.o(i.main) refers to main.o(i.prvSetupHardware) for prvSetupHardware
+    main.o(i.main) refers to tasks.o(i.xTaskCreate) for xTaskCreate
+    main.o(i.main) refers to tasks.o(i.vTaskStartScheduler) for vTaskStartScheduler
+    main.o(i.main) refers to main.o(i.task1) for task1
+    main.o(i.prvSetupHardware) refers to usart.o(i.usartInit) for usartInit
+    main.o(i.prvSetupHardware) refers to gpio.o(i.portInit) for portInit
+    main.o(i.task1) refers to gpio.o(i.portInit) for portInit
+    main.o(i.task1) refers to pwm.o(i.Tim1_Init) for Tim1_Init
+    main.o(i.task1) refers to pwm.o(i.pwmWrite) for pwmWrite
+    main.o(i.task1) refers to usart.o(i.GetChar) for GetChar
+    main.o(i.task1) refers to usart.o(i.Send_String) for Send_String
+    main.o(i.task2) refers to gpio.o(i.pinReset) for pinReset
+    main.o(i.task2) refers to usart.o(i.Send_String) for Send_String
+    main.o(i.task2) refers to tasks.o(i.vTaskDelay) for vTaskDelay
+    gpio.o(i.portInit) refers to gpio.o(i.Set_clock) for Set_clock
+    gpio.o(i.portInitAlt) refers to gpio.o(i.Set_clock) for Set_clock
+    timer.o(i.millis) refers to timer.o(.data) for MILLIS
+    usart.o(i.Send_String) refers to usart.o(i.sendChar) for sendChar
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_set_read_from_peripheral) for dma_set_read_from_peripheral
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    usart.o(i.dma_read_usart1) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_set_read_from_peripheral) for dma_set_read_from_peripheral
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    usart.o(i.dma_read_usart2) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_set_read_from_peripheral) for dma_set_read_from_peripheral
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    usart.o(i.dma_read_usart3) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_set_read_from_peripheral) for dma_set_read_from_peripheral
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    usart.o(i.dma_read_usart4) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_set_read_from_memory) for dma_set_read_from_memory
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    usart.o(i.dma_write_usart1) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_set_read_from_memory) for dma_set_read_from_memory
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    usart.o(i.dma_write_usart2) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_set_read_from_memory) for dma_set_read_from_memory
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    usart.o(i.dma_write_usart3) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_set_read_from_memory) for dma_set_read_from_memory
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    usart.o(i.dma_write_usart4) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    usart.o(i.usartInit) refers to main.o(.data) for __clk
+    can.o(i.CAN_wrFilter) refers to can.o(.data) for CAN_filterIdx
+    can.o(i.canTransmit) refers to can.o(i.CAN_wrMsg) for CAN_wrMsg
+    can.o(i.canTransmit) refers to can.o(.bss) for CAN_TxMsg
+    can.o(i.filtersInit) refers to can.o(i.CAN_wrFilter) for CAN_wrFilter
+    myspi.o(i.DMAChannel2_IRQHandler) refers to dma.o(i.dma_disable_transfer_complete_interrupt) for dma_disable_transfer_complete_interrupt
+    myspi.o(i.DMAChannel2_IRQHandler) refers to myspi.o(i.spi_disable_rx_dma) for spi_disable_rx_dma
+    myspi.o(i.DMAChannel2_IRQHandler) refers to dma.o(i.dma_disable_channel) for dma_disable_channel
+    myspi.o(i.DMAChannel3_IRQHandler) refers to dma.o(i.dma_disable_transfer_complete_interrupt) for dma_disable_transfer_complete_interrupt
+    myspi.o(i.DMAChannel3_IRQHandler) refers to myspi.o(i.spi_disable_tx_dma) for spi_disable_tx_dma
+    myspi.o(i.DMAChannel3_IRQHandler) refers to dma.o(i.dma_disable_channel) for dma_disable_channel
+    myspi.o(i.DMAChannel4_IRQHandler) refers to dma.o(i.dma_disable_transfer_complete_interrupt) for dma_disable_transfer_complete_interrupt
+    myspi.o(i.DMAChannel4_IRQHandler) refers to myspi.o(i.spi_disable_rx_dma) for spi_disable_rx_dma
+    myspi.o(i.DMAChannel4_IRQHandler) refers to dma.o(i.dma_disable_channel) for dma_disable_channel
+    myspi.o(i.DMAChannel5_IRQHandler) refers to dma.o(i.dma_disable_transfer_complete_interrupt) for dma_disable_transfer_complete_interrupt
+    myspi.o(i.DMAChannel5_IRQHandler) refers to myspi.o(i.spi_disable_tx_dma) for spi_disable_tx_dma
+    myspi.o(i.DMAChannel5_IRQHandler) refers to dma.o(i.dma_disable_channel) for dma_disable_channel
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_set_read_from_peripheral) for dma_set_read_from_peripheral
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    myspi.o(i.spi1_dma_receive) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    myspi.o(i.spi1_dma_receive) refers to myspi.o(i.spi_enable_rx_dma) for spi_enable_rx_dma
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_set_read_from_memory) for dma_set_read_from_memory
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    myspi.o(i.spi1_dma_transmit) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    myspi.o(i.spi1_dma_transmit) refers to myspi.o(i.spi_enable_tx_dma) for spi_enable_tx_dma
+    myspi.o(i.spi1_dma_transmit) refers to myspi.o(.data) for transceive_status
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_set_read_from_peripheral) for dma_set_read_from_peripheral
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    myspi.o(i.spi2_dma_transceive) refers to myspi.o(i.spi_enable_rx_dma) for spi_enable_rx_dma
+    myspi.o(i.spi2_dma_transceive) refers to dma.o(i.dma_set_read_from_memory) for dma_set_read_from_memory
+    myspi.o(i.spi2_dma_transceive) refers to myspi.o(i.spi_enable_tx_dma) for spi_enable_tx_dma
+    myspi.o(i.spi2_dma_transceive) refers to myspi.o(.data) for transceive_status
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_channel_reset) for dma_channel_reset
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_set_peripheral_address) for dma_set_peripheral_address
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_set_memory_address) for dma_set_memory_address
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_set_number_of_data) for dma_set_number_of_data
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_set_read_from_peripheral) for dma_set_read_from_peripheral
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_enable_memory_increment_mode) for dma_enable_memory_increment_mode
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_set_peripheral_size) for dma_set_peripheral_size
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_set_memory_size) for dma_set_memory_size
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_set_priority) for dma_set_priority
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_enable_transfer_complete_interrupt) for dma_enable_transfer_complete_interrupt
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_enable_channel) for dma_enable_channel
+    myspi.o(i.spi_dma_transceive) refers to myspi.o(i.spi_enable_rx_dma) for spi_enable_rx_dma
+    myspi.o(i.spi_dma_transceive) refers to dma.o(i.dma_set_read_from_memory) for dma_set_read_from_memory
+    myspi.o(i.spi_dma_transceive) refers to myspi.o(i.spi_enable_tx_dma) for spi_enable_tx_dma
+    myspi.o(i.spi_dma_transceive) refers to myspi.o(.data) for transceive_status
+    myspi.o(i.spi_init_master) refers to gpio.o(i.portInit) for portInit
+    myspi.o(i.spi_init_master) refers to gpio.o(i.portInitAlt) for portInitAlt
+    myspi.o(i.spi_xfer) refers to myspi.o(i.spi_write) for spi_write
+    event_groups.o(i.vEventGroupClearBitsCallback) refers to event_groups.o(i.xEventGroupClearBits) for xEventGroupClearBits
+    event_groups.o(i.vEventGroupDelete) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    event_groups.o(i.vEventGroupDelete) refers to tasks.o(i.xTaskRemoveFromUnorderedEventList) for xTaskRemoveFromUnorderedEventList
+    event_groups.o(i.vEventGroupDelete) refers to heap_2.o(i.vPortFree) for vPortFree
+    event_groups.o(i.vEventGroupDelete) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    event_groups.o(i.vEventGroupSetBitsCallback) refers to event_groups.o(i.xEventGroupSetBits) for xEventGroupSetBits
+    event_groups.o(i.xEventGroupClearBits) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    event_groups.o(i.xEventGroupClearBits) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    event_groups.o(i.xEventGroupCreate) refers to heap_2.o(i.pvPortMalloc) for pvPortMalloc
+    event_groups.o(i.xEventGroupCreate) refers to list.o(i.vListInitialise) for vListInitialise
+    event_groups.o(i.xEventGroupSetBits) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    event_groups.o(i.xEventGroupSetBits) refers to tasks.o(i.xTaskRemoveFromUnorderedEventList) for xTaskRemoveFromUnorderedEventList
+    event_groups.o(i.xEventGroupSetBits) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    event_groups.o(i.xEventGroupSync) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    event_groups.o(i.xEventGroupSync) refers to event_groups.o(i.xEventGroupSetBits) for xEventGroupSetBits
+    event_groups.o(i.xEventGroupSync) refers to tasks.o(i.vTaskPlaceOnUnorderedEventList) for vTaskPlaceOnUnorderedEventList
+    event_groups.o(i.xEventGroupSync) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    event_groups.o(i.xEventGroupSync) refers to tasks.o(i.uxTaskResetEventItemValue) for uxTaskResetEventItemValue
+    event_groups.o(i.xEventGroupSync) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    event_groups.o(i.xEventGroupSync) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    event_groups.o(i.xEventGroupWaitBits) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    event_groups.o(i.xEventGroupWaitBits) refers to event_groups.o(i.prvTestWaitCondition) for prvTestWaitCondition
+    event_groups.o(i.xEventGroupWaitBits) refers to tasks.o(i.vTaskPlaceOnUnorderedEventList) for vTaskPlaceOnUnorderedEventList
+    event_groups.o(i.xEventGroupWaitBits) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    event_groups.o(i.xEventGroupWaitBits) refers to tasks.o(i.uxTaskResetEventItemValue) for uxTaskResetEventItemValue
+    event_groups.o(i.xEventGroupWaitBits) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    event_groups.o(i.xEventGroupWaitBits) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.prvCopyDataFromQueue) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    queue.o(i.prvCopyDataToQueue) refers to tasks.o(i.xTaskPriorityDisinherit) for xTaskPriorityDisinherit
+    queue.o(i.prvCopyDataToQueue) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    queue.o(i.prvInitialiseMutex) refers to queue.o(i.xQueueGenericSend) for xQueueGenericSend
+    queue.o(i.prvInitialiseNewQueue) refers to queue.o(i.xQueueGenericReset) for xQueueGenericReset
+    queue.o(i.prvIsQueueEmpty) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.prvIsQueueEmpty) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.prvIsQueueFull) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.prvIsQueueFull) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.prvUnlockQueue) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.prvUnlockQueue) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.prvUnlockQueue) refers to tasks.o(i.vTaskMissedYield) for vTaskMissedYield
+    queue.o(i.prvUnlockQueue) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.uxQueueMessagesWaiting) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.uxQueueMessagesWaiting) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.uxQueueSpacesAvailable) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.uxQueueSpacesAvailable) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.vQueueDelete) refers to heap_2.o(i.vPortFree) for vPortFree
+    queue.o(i.xQueueCreateMutex) refers to queue.o(i.xQueueGenericCreate) for xQueueGenericCreate
+    queue.o(i.xQueueCreateMutex) refers to queue.o(i.prvInitialiseMutex) for prvInitialiseMutex
+    queue.o(i.xQueueGenericCreate) refers to heap_2.o(i.pvPortMalloc) for pvPortMalloc
+    queue.o(i.xQueueGenericCreate) refers to queue.o(i.prvInitialiseNewQueue) for prvInitialiseNewQueue
+    queue.o(i.xQueueGenericReceive) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.xQueueGenericReceive) refers to queue.o(i.prvCopyDataFromQueue) for prvCopyDataFromQueue
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.pvTaskIncrementMutexHeldCount) for pvTaskIncrementMutexHeldCount
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueGenericReceive) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.vTaskSetTimeOutState) for vTaskSetTimeOutState
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.xTaskCheckForTimeOut) for xTaskCheckForTimeOut
+    queue.o(i.xQueueGenericReceive) refers to queue.o(i.prvIsQueueEmpty) for prvIsQueueEmpty
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.vTaskPriorityInherit) for vTaskPriorityInherit
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.vTaskPlaceOnEventList) for vTaskPlaceOnEventList
+    queue.o(i.xQueueGenericReceive) refers to queue.o(i.prvUnlockQueue) for prvUnlockQueue
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    queue.o(i.xQueueGenericReset) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.xQueueGenericReset) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueGenericReset) refers to list.o(i.vListInitialise) for vListInitialise
+    queue.o(i.xQueueGenericReset) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.xQueueGenericSend) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.xQueueGenericSend) refers to queue.o(i.prvCopyDataToQueue) for prvCopyDataToQueue
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueGenericSend) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.vTaskSetTimeOutState) for vTaskSetTimeOutState
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.xTaskCheckForTimeOut) for xTaskCheckForTimeOut
+    queue.o(i.xQueueGenericSend) refers to queue.o(i.prvIsQueueFull) for prvIsQueueFull
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.vTaskPlaceOnEventList) for vTaskPlaceOnEventList
+    queue.o(i.xQueueGenericSend) refers to queue.o(i.prvUnlockQueue) for prvUnlockQueue
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    queue.o(i.xQueueGenericSendFromISR) refers to queue.o(i.prvCopyDataToQueue) for prvCopyDataToQueue
+    queue.o(i.xQueueGenericSendFromISR) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueGiveFromISR) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueuePeekFromISR) refers to queue.o(i.prvCopyDataFromQueue) for prvCopyDataFromQueue
+    queue.o(i.xQueueReceiveFromISR) refers to queue.o(i.prvCopyDataFromQueue) for prvCopyDataFromQueue
+    queue.o(i.xQueueReceiveFromISR) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    tasks.o(i.eTaskGetState) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.eTaskGetState) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.eTaskGetState) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.eTaskGetState) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.pcTaskGetName) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.prvAddCurrentTaskToDelayedList) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.prvAddCurrentTaskToDelayedList) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.prvAddCurrentTaskToDelayedList) refers to list.o(i.vListInsert) for vListInsert
+    tasks.o(i.prvAddCurrentTaskToDelayedList) refers to tasks.o(.data) for xTickCount
+    tasks.o(i.prvAddCurrentTaskToDelayedList) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.prvAddNewTaskToReadyList) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.prvAddNewTaskToReadyList) refers to tasks.o(i.prvInitialiseTaskLists) for prvInitialiseTaskLists
+    tasks.o(i.prvAddNewTaskToReadyList) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.prvAddNewTaskToReadyList) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.prvAddNewTaskToReadyList) refers to tasks.o(.data) for uxCurrentNumberOfTasks
+    tasks.o(i.prvAddNewTaskToReadyList) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(i.prvDeleteTCB) for prvDeleteTCB
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(.bss) for xTasksWaitingTermination
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(.data) for uxCurrentNumberOfTasks
+    tasks.o(i.prvDeleteTCB) refers to heap_2.o(i.vPortFree) for vPortFree
+    tasks.o(i.prvIdleTask) refers to tasks.o(i.prvCheckTasksWaitingTermination) for prvCheckTasksWaitingTermination
+    tasks.o(i.prvIdleTask) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.prvInitialiseNewTask) refers to aeabi_memset.o(.text) for __aeabi_memset
+    tasks.o(i.prvInitialiseNewTask) refers to list.o(i.vListInitialiseItem) for vListInitialiseItem
+    tasks.o(i.prvInitialiseNewTask) refers to port.o(i.pxPortInitialiseStack) for pxPortInitialiseStack
+    tasks.o(i.prvInitialiseTaskLists) refers to list.o(i.vListInitialise) for vListInitialise
+    tasks.o(i.prvInitialiseTaskLists) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.prvInitialiseTaskLists) refers to tasks.o(.data) for pxDelayedTaskList
+    tasks.o(i.prvListTasksWithinSingleList) refers to tasks.o(i.vTaskGetInfo) for vTaskGetInfo
+    tasks.o(i.prvResetNextTaskUnblockTime) refers to tasks.o(.data) for pxDelayedTaskList
+    tasks.o(i.prvTaskIsTaskSuspended) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.pvTaskIncrementMutexHeldCount) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.ulTaskNotifyTake) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.ulTaskNotifyTake) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.ulTaskNotifyTake) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.ulTaskNotifyTake) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.uxTaskGetNumberOfTasks) refers to tasks.o(.data) for uxCurrentNumberOfTasks
+    tasks.o(i.uxTaskGetStackHighWaterMark) refers to tasks.o(i.prvTaskCheckFreeStackSpace) for prvTaskCheckFreeStackSpace
+    tasks.o(i.uxTaskGetStackHighWaterMark) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(i.prvListTasksWithinSingleList) for prvListTasksWithinSingleList
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(.data) for uxCurrentNumberOfTasks
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.uxTaskPriorityGet) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.uxTaskPriorityGet) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.uxTaskPriorityGet) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.uxTaskPriorityGetFromISR) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.uxTaskResetEventItemValue) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskDelay) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    tasks.o(i.vTaskDelay) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.vTaskDelay) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    tasks.o(i.vTaskDelayUntil) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    tasks.o(i.vTaskDelayUntil) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.vTaskDelayUntil) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    tasks.o(i.vTaskDelayUntil) refers to tasks.o(.data) for xTickCount
+    tasks.o(i.vTaskDelete) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.vTaskDelete) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskDelete) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskDelete) refers to tasks.o(i.prvDeleteTCB) for prvDeleteTCB
+    tasks.o(i.vTaskDelete) refers to tasks.o(i.prvResetNextTaskUnblockTime) for prvResetNextTaskUnblockTime
+    tasks.o(i.vTaskDelete) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.vTaskDelete) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskDelete) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskEndScheduler) refers to port.o(i.vPortEndScheduler) for vPortEndScheduler
+    tasks.o(i.vTaskEndScheduler) refers to tasks.o(.data) for xSchedulerRunning
+    tasks.o(i.vTaskGetInfo) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    tasks.o(i.vTaskGetInfo) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    tasks.o(i.vTaskGetInfo) refers to tasks.o(i.eTaskGetState) for eTaskGetState
+    tasks.o(i.vTaskGetInfo) refers to tasks.o(i.prvTaskCheckFreeStackSpace) for prvTaskCheckFreeStackSpace
+    tasks.o(i.vTaskGetInfo) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskMissedYield) refers to tasks.o(.data) for xYieldPending
+    tasks.o(i.vTaskNotifyGiveFromISR) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskNotifyGiveFromISR) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskNotifyGiveFromISR) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.vTaskNotifyGiveFromISR) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskPlaceOnEventList) refers to list.o(i.vListInsert) for vListInsert
+    tasks.o(i.vTaskPlaceOnEventList) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.vTaskPlaceOnEventList) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskPlaceOnUnorderedEventList) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskPlaceOnUnorderedEventList) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.vTaskPlaceOnUnorderedEventList) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskPriorityInherit) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskPriorityInherit) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskPriorityInherit) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskPriorityInherit) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskPrioritySet) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.vTaskPrioritySet) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskPrioritySet) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskPrioritySet) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.vTaskPrioritySet) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskPrioritySet) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskResume) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.vTaskResume) refers to tasks.o(i.prvTaskIsTaskSuspended) for prvTaskIsTaskSuspended
+    tasks.o(i.vTaskResume) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskResume) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskResume) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.vTaskResume) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskResume) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskSetTimeOutState) refers to tasks.o(.data) for xNumOfOverflows
+    tasks.o(i.vTaskStartScheduler) refers to tasks.o(i.xTaskCreate) for xTaskCreate
+    tasks.o(i.vTaskStartScheduler) refers to port.o(i.xPortStartScheduler) for xPortStartScheduler
+    tasks.o(i.vTaskStartScheduler) refers to tasks.o(.data) for xIdleTaskHandle
+    tasks.o(i.vTaskStartScheduler) refers to tasks.o(i.prvIdleTask) for prvIdleTask
+    tasks.o(i.vTaskSuspend) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.vTaskSuspend) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskSuspend) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskSuspend) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.vTaskSuspend) refers to tasks.o(i.prvResetNextTaskUnblockTime) for prvResetNextTaskUnblockTime
+    tasks.o(i.vTaskSuspend) refers to tasks.o(i.vTaskSwitchContext) for vTaskSwitchContext
+    tasks.o(i.vTaskSuspend) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskSuspend) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskSuspendAll) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.vTaskSwitchContext) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.vTaskSwitchContext) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskCheckForTimeOut) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskCheckForTimeOut) refers to tasks.o(i.vTaskSetTimeOutState) for vTaskSetTimeOutState
+    tasks.o(i.xTaskCheckForTimeOut) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskCheckForTimeOut) refers to tasks.o(.data) for xTickCount
+    tasks.o(i.xTaskCreate) refers to heap_2.o(i.pvPortMalloc) for pvPortMalloc
+    tasks.o(i.xTaskCreate) refers to heap_2.o(i.vPortFree) for vPortFree
+    tasks.o(i.xTaskCreate) refers to tasks.o(i.prvInitialiseNewTask) for prvInitialiseNewTask
+    tasks.o(i.xTaskCreate) refers to tasks.o(i.prvAddNewTaskToReadyList) for prvAddNewTaskToReadyList
+    tasks.o(i.xTaskGenericNotify) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskGenericNotify) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskGenericNotify) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskGenericNotify) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskGenericNotify) refers to tasks.o(.data) for uxTopReadyPriority
+    tasks.o(i.xTaskGenericNotify) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskGetCurrentTaskHandle) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.xTaskGetTickCount) refers to tasks.o(.data) for xTickCount
+    tasks.o(i.xTaskGetTickCountFromISR) refers to tasks.o(.data) for xTickCount
+    tasks.o(i.xTaskIncrementTick) refers to tasks.o(i.prvResetNextTaskUnblockTime) for prvResetNextTaskUnblockTime
+    tasks.o(i.xTaskIncrementTick) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskIncrementTick) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskIncrementTick) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskIncrementTick) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskNotifyStateClear) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskNotifyStateClear) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskNotifyStateClear) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.xTaskNotifyWait) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskNotifyWait) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.xTaskNotifyWait) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskNotifyWait) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.xTaskPriorityDisinherit) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskPriorityDisinherit) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskPriorityDisinherit) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskPriorityDisinherit) refers to tasks.o(.data) for uxTopReadyPriority
+    tasks.o(i.xTaskRemoveFromEventList) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskRemoveFromEventList) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskRemoveFromEventList) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskRemoveFromEventList) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskRemoveFromUnorderedEventList) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskRemoveFromUnorderedEventList) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskRemoveFromUnorderedEventList) refers to tasks.o(.data) for uxTopReadyPriority
+    tasks.o(i.xTaskRemoveFromUnorderedEventList) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskResumeAll) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskResumeAll) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskResumeAll) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskResumeAll) refers to tasks.o(i.prvResetNextTaskUnblockTime) for prvResetNextTaskUnblockTime
+    tasks.o(i.xTaskResumeAll) refers to tasks.o(i.xTaskIncrementTick) for xTaskIncrementTick
+    tasks.o(i.xTaskResumeAll) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskResumeAll) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskResumeAll) refers to tasks.o(.bss) for xPendingReadyList
+    tasks.o(i.xTaskResumeFromISR) refers to tasks.o(i.prvTaskIsTaskSuspended) for prvTaskIsTaskSuspended
+    tasks.o(i.xTaskResumeFromISR) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskResumeFromISR) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskResumeFromISR) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskResumeFromISR) refers to tasks.o(.bss) for pxReadyTasksLists
+    port.o(.emb_text) refers to tasks.o(i.vTaskSwitchContext) for vTaskSwitchContext
+    port.o(.emb_text) refers to tasks.o(.data) for pxCurrentTCB
+    port.o(i.pxPortInitialiseStack) refers to port.o(i.prvTaskExitError) for prvTaskExitError
+    port.o(i.vPortEnterCritical) refers to port.o(.data) for uxCriticalNesting
+    port.o(i.vPortExitCritical) refers to port.o(.data) for uxCriticalNesting
+    port.o(i.xPortStartScheduler) refers to port.o(i.vPortSetupTimerInterrupt) for vPortSetupTimerInterrupt
+    port.o(i.xPortStartScheduler) refers to port.o(.emb_text) for __asm___6_port_c_39a90d8d__prvStartFirstTask
+    port.o(i.xPortStartScheduler) refers to port.o(.data) for uxCriticalNesting
+    port.o(i.xPortSysTickHandler) refers to tasks.o(i.xTaskIncrementTick) for xTaskIncrementTick
+    heap_2.o(i.prvHeapInit) refers to heap_2.o(.bss) for ucHeap
+    heap_2.o(i.prvHeapInit) refers to heap_2.o(.data) for xStart
+    heap_2.o(i.pvPortMalloc) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    heap_2.o(i.pvPortMalloc) refers to heap_2.o(i.prvHeapInit) for prvHeapInit
+    heap_2.o(i.pvPortMalloc) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    heap_2.o(i.pvPortMalloc) refers to heap_2.o(.data) for xHeapHasBeenInitialised
+    heap_2.o(i.vPortFree) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    heap_2.o(i.vPortFree) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    heap_2.o(i.vPortFree) refers to heap_2.o(.data) for xStart
+    heap_2.o(i.xPortGetFreeHeapSize) refers to heap_2.o(.data) for xFreeBytesRemaining
+    rt_memcpy_v6.o(.text) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    aeabi_memset.o(.text) refers to rt_memclr.o(.text) for _memset
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    rt_memclr.o(.text) refers to rt_memclr_w.o(.text) for _memset_w
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(i.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to stm32f10x.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(i.clock_72), (172 bytes).
+    Removing main.o(i.task2), (56 bytes).
+    Removing extint.o(i.EXTInterruptDisable), (136 bytes).
+    Removing extint.o(i.EXTInterruptEnable), (140 bytes).
+    Removing extint.o(i.EXTInterruptPinEnable), (88 bytes).
+    Removing extint.o(i.resetExternalInterrupt), (40 bytes).
+    Removing gpio.o(i.pinRead), (14 bytes).
+    Removing gpio.o(i.pinReset), (8 bytes).
+    Removing gpio.o(i.pinSet), (8 bytes).
+    Removing gpio.o(i.portInitAlt), (90 bytes).
+    Removing gpio.o(i.portRead), (8 bytes).
+    Removing gpio.o(i.portWrite), (4 bytes).
+    Removing i2c.o(i.I2CErrorInterrupt), (84 bytes).
+    Removing i2c.o(i.I2CEventInterrupt), (56 bytes).
+    Removing i2c.o(i.I2CInit), (148 bytes).
+    Removing i2c.o(i.I2C_Addr), (40 bytes).
+    Removing i2c.o(i.I2C_Read), (58 bytes).
+    Removing i2c.o(i.I2C_Start), (44 bytes).
+    Removing i2c.o(i.I2C_Stop), (44 bytes).
+    Removing i2c.o(i.I2C_Write), (38 bytes).
+    Removing nvic.o(i.nvic_clear_pending_irq), (42 bytes).
+    Removing nvic.o(i.nvic_disable_irq), (42 bytes).
+    Removing nvic.o(i.nvic_enable_irq), (42 bytes).
+    Removing nvic.o(i.nvic_generate_software_interrupt), (20 bytes).
+    Removing nvic.o(i.nvic_get_active_irq), (54 bytes).
+    Removing nvic.o(i.nvic_get_irq_enabled), (54 bytes).
+    Removing nvic.o(i.nvic_get_pending_irq), (54 bytes).
+    Removing nvic.o(i.nvic_set_pending_irq), (42 bytes).
+    Removing nvic.o(i.nvic_set_priority), (10 bytes).
+    Removing timer.o(i.advancedTimerInit), (136 bytes).
+    Removing timer.o(i.disableTimerInterrupt), (128 bytes).
+    Removing timer.o(i.enableTimerInterrupt), (152 bytes).
+    Removing timer.o(i.initTimerIC), (134 bytes).
+    Removing timer.o(i.initTimerOC), (134 bytes).
+    Removing timer.o(i.initTimerOC4CH), (42 bytes).
+    Removing timer.o(i.millis), (12 bytes).
+    Removing timer.o(i.millisInit), (84 bytes).
+    Removing timer.o(i.readCapture), (66 bytes).
+    Removing timer.o(i.timerInit), (116 bytes).
+    Removing timer.o(.data), (8 bytes).
+    Removing usart.o(i.dma_read_usart1), (136 bytes).
+    Removing usart.o(i.dma_read_usart2), (136 bytes).
+    Removing usart.o(i.dma_read_usart3), (136 bytes).
+    Removing usart.o(i.dma_read_usart4), (136 bytes).
+    Removing usart.o(i.dma_write_usart1), (136 bytes).
+    Removing usart.o(i.dma_write_usart2), (136 bytes).
+    Removing usart.o(i.dma_write_usart3), (136 bytes).
+    Removing usart.o(i.dma_write_usart4), (136 bytes).
+    Removing watchdog.o(i.initWatchDog), (32 bytes).
+    Removing can.o(i.CAN_wrFilter), (268 bytes).
+    Removing can.o(i.CAN_wrMsg), (212 bytes).
+    Removing can.o(i.canInit), (268 bytes).
+    Removing can.o(i.canRead), (220 bytes).
+    Removing can.o(i.canTransmit), (68 bytes).
+    Removing can.o(i.filtersInit), (44 bytes).
+    Removing can.o(.bss), (32 bytes).
+    Removing can.o(.data), (2 bytes).
+    Removing dma.o(i.dma_channel_reset), (108 bytes).
+    Removing dma.o(i.dma_disable_half_transfer_interrupt), (36 bytes).
+    Removing dma.o(i.dma_disable_transfer_error_interrupt), (36 bytes).
+    Removing dma.o(i.dma_enable_channel), (36 bytes).
+    Removing dma.o(i.dma_enable_circular_mode), (68 bytes).
+    Removing dma.o(i.dma_enable_half_transfer_interrupt), (36 bytes).
+    Removing dma.o(i.dma_enable_mem2mem_mode), (68 bytes).
+    Removing dma.o(i.dma_enable_memory_increment_mode), (36 bytes).
+    Removing dma.o(i.dma_enable_peripheral_increment_mode), (36 bytes).
+    Removing dma.o(i.dma_enable_transfer_complete_interrupt), (36 bytes).
+    Removing dma.o(i.dma_enable_transfer_error_interrupt), (36 bytes).
+    Removing dma.o(i.dma_set_memory_address), (18 bytes).
+    Removing dma.o(i.dma_set_memory_size), (66 bytes).
+    Removing dma.o(i.dma_set_number_of_data), (18 bytes).
+    Removing dma.o(i.dma_set_peripheral_address), (18 bytes).
+    Removing dma.o(i.dma_set_peripheral_size), (66 bytes).
+    Removing dma.o(i.dma_set_priority), (66 bytes).
+    Removing dma.o(i.dma_set_read_from_memory), (36 bytes).
+    Removing dma.o(i.dma_set_read_from_peripheral), (36 bytes).
+    Removing myspi.o(i.spi1_dma_receive), (148 bytes).
+    Removing myspi.o(i.spi1_dma_transmit), (172 bytes).
+    Removing myspi.o(i.spi2_dma_transceive), (292 bytes).
+    Removing myspi.o(i.spi_clean_disable), (50 bytes).
+    Removing myspi.o(i.spi_disable_crc), (10 bytes).
+    Removing myspi.o(i.spi_disable_software_slave_management), (10 bytes).
+    Removing myspi.o(i.spi_dma_transceive), (308 bytes).
+    Removing myspi.o(i.spi_enable), (10 bytes).
+    Removing myspi.o(i.spi_enable_crc), (10 bytes).
+    Removing myspi.o(i.spi_enable_rx_dma), (10 bytes).
+    Removing myspi.o(i.spi_enable_software_slave_management), (18 bytes).
+    Removing myspi.o(i.spi_enable_ss_output), (10 bytes).
+    Removing myspi.o(i.spi_enable_tx_dma), (10 bytes).
+    Removing myspi.o(i.spi_init_master), (388 bytes).
+    Removing myspi.o(i.spi_read), (18 bytes).
+    Removing myspi.o(i.spi_reset), (16 bytes).
+    Removing myspi.o(i.spi_send), (16 bytes).
+    Removing myspi.o(i.spi_set_dff_16bit), (10 bytes).
+    Removing myspi.o(i.spi_set_dff_8bit), (10 bytes).
+    Removing myspi.o(i.spi_set_next_tx_from_buffer), (10 bytes).
+    Removing myspi.o(i.spi_set_nss_high), (10 bytes).
+    Removing myspi.o(i.spi_set_nss_low), (10 bytes).
+    Removing myspi.o(i.spi_write), (4 bytes).
+    Removing myspi.o(i.spi_xfer), (30 bytes).
+    Removing myspi.o(.data), (1 bytes).
+    Removing pwm.o(i.disable_interrupt), (24 bytes).
+    Removing pwm.o(i.enable_interrupt), (22 bytes).
+    Removing event_groups.o(i.prvTestWaitCondition), (30 bytes).
+    Removing event_groups.o(i.uxEventGroupGetNumber), (14 bytes).
+    Removing event_groups.o(i.vEventGroupClearBitsCallback), (16 bytes).
+    Removing event_groups.o(i.vEventGroupDelete), (42 bytes).
+    Removing event_groups.o(i.vEventGroupSetBitsCallback), (16 bytes).
+    Removing event_groups.o(i.xEventGroupClearBits), (32 bytes).
+    Removing event_groups.o(i.xEventGroupCreate), (26 bytes).
+    Removing event_groups.o(i.xEventGroupGetBitsFromISR), (44 bytes).
+    Removing event_groups.o(i.xEventGroupSetBits), (146 bytes).
+    Removing event_groups.o(i.xEventGroupSync), (164 bytes).
+    Removing event_groups.o(i.xEventGroupWaitBits), (200 bytes).
+    Removing list.o(i.vListInsert), (52 bytes).
+    Removing queue.o(i.prvCopyDataFromQueue), (42 bytes).
+    Removing queue.o(i.prvCopyDataToQueue), (124 bytes).
+    Removing queue.o(i.prvInitialiseMutex), (28 bytes).
+    Removing queue.o(i.prvInitialiseNewQueue), (42 bytes).
+    Removing queue.o(i.prvIsQueueEmpty), (26 bytes).
+    Removing queue.o(i.prvIsQueueFull), (30 bytes).
+    Removing queue.o(i.prvUnlockQueue), (126 bytes).
+    Removing queue.o(i.ucQueueGetQueueType), (8 bytes).
+    Removing queue.o(i.uxQueueGetQueueNumber), (6 bytes).
+    Removing queue.o(i.uxQueueMessagesWaiting), (18 bytes).
+    Removing queue.o(i.uxQueueMessagesWaitingFromISR), (6 bytes).
+    Removing queue.o(i.uxQueueSpacesAvailable), (24 bytes).
+    Removing queue.o(i.vQueueDelete), (14 bytes).
+    Removing queue.o(i.vQueueSetQueueNumber), (4 bytes).
+    Removing queue.o(i.xQueueCreateMutex), (34 bytes).
+    Removing queue.o(i.xQueueGenericCreate), (56 bytes).
+    Removing queue.o(i.xQueueGenericReceive), (348 bytes).
+    Removing queue.o(i.xQueueGenericReset), (128 bytes).
+    Removing queue.o(i.xQueueGenericSend), (280 bytes).
+    Removing queue.o(i.xQueueGenericSendFromISR), (134 bytes).
+    Removing queue.o(i.xQueueGiveFromISR), (120 bytes).
+    Removing queue.o(i.xQueueIsQueueEmptyFromISR), (14 bytes).
+    Removing queue.o(i.xQueueIsQueueFullFromISR), (18 bytes).
+    Removing queue.o(i.xQueuePeekFromISR), (74 bytes).
+    Removing queue.o(i.xQueueReceiveFromISR), (130 bytes).
+    Removing tasks.o(i.eTaskGetState), (108 bytes).
+    Removing tasks.o(i.pcTaskGetName), (24 bytes).
+    Removing tasks.o(i.prvAddCurrentTaskToDelayedList), (152 bytes).
+    Removing tasks.o(i.prvListTasksWithinSingleList), (106 bytes).
+    Removing tasks.o(i.prvTaskCheckFreeStackSpace), (22 bytes).
+    Removing tasks.o(i.prvTaskIsTaskSuspended), (64 bytes).
+    Removing tasks.o(i.pvTaskIncrementMutexHeldCount), (32 bytes).
+    Removing tasks.o(i.ulTaskNotifyTake), (116 bytes).
+    Removing tasks.o(i.uxTaskGetNumberOfTasks), (12 bytes).
+    Removing tasks.o(i.uxTaskGetStackHighWaterMark), (40 bytes).
+    Removing tasks.o(i.uxTaskGetSystemState), (176 bytes).
+    Removing tasks.o(i.uxTaskGetTaskNumber), (14 bytes).
+    Removing tasks.o(i.uxTaskPriorityGet), (36 bytes).
+    Removing tasks.o(i.uxTaskPriorityGetFromISR), (56 bytes).
+    Removing tasks.o(i.uxTaskResetEventItemValue), (28 bytes).
+    Removing tasks.o(i.vTaskDelay), (52 bytes).
+    Removing tasks.o(i.vTaskDelayUntil), (116 bytes).
+    Removing tasks.o(i.vTaskDelete), (204 bytes).
+    Removing tasks.o(i.vTaskEndScheduler), (36 bytes).
+    Removing tasks.o(i.vTaskGetInfo), (120 bytes).
+    Removing tasks.o(i.vTaskMissedYield), (12 bytes).
+    Removing tasks.o(i.vTaskNotifyGiveFromISR), (180 bytes).
+    Removing tasks.o(i.vTaskPlaceOnEventList), (32 bytes).
+    Removing tasks.o(i.vTaskPlaceOnUnorderedEventList), (44 bytes).
+    Removing tasks.o(i.vTaskPriorityInherit), (176 bytes).
+    Removing tasks.o(i.vTaskPrioritySet), (244 bytes).
+    Removing tasks.o(i.vTaskResume), (120 bytes).
+    Removing tasks.o(i.vTaskSetTaskNumber), (8 bytes).
+    Removing tasks.o(i.vTaskSetTimeOutState), (24 bytes).
+    Removing tasks.o(i.vTaskSuspend), (188 bytes).
+    Removing tasks.o(i.xTaskCheckForTimeOut), (92 bytes).
+    Removing tasks.o(i.xTaskGenericNotify), (196 bytes).
+    Removing tasks.o(i.xTaskGenericNotifyFromISR), (252 bytes).
+    Removing tasks.o(i.xTaskGetCurrentTaskHandle), (12 bytes).
+    Removing tasks.o(i.xTaskGetTickCount), (12 bytes).
+    Removing tasks.o(i.xTaskGetTickCountFromISR), (12 bytes).
+    Removing tasks.o(i.xTaskNotifyStateClear), (52 bytes).
+    Removing tasks.o(i.xTaskNotifyWait), (160 bytes).
+    Removing tasks.o(i.xTaskPriorityDisinherit), (132 bytes).
+    Removing tasks.o(i.xTaskRemoveFromEventList), (128 bytes).
+    Removing tasks.o(i.xTaskRemoveFromUnorderedEventList), (112 bytes).
+    Removing tasks.o(i.xTaskResumeFromISR), (152 bytes).
+    Removing port.o(i.vPortEndScheduler), (2 bytes).
+    Removing heap_2.o(i.vPortInitialiseBlocks), (2 bytes).
+    Removing heap_2.o(i.xPortGetFreeHeapSize), (12 bytes).
+
+185 unused section(s) (total 13851 bytes) removed from the image.

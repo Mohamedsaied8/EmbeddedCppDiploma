@@ -1,0 +1,163 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.26.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mohamed Saied, AMIT, LIC=S5IJJ-U8WA1-34CST-RXU7U-EXBRK-F5UBH
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.26.2.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.26.2.0
+Dialog DLL:      DARMSTM.DLL V1.68.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.5.0
+Dialog DLL:      TARMSTM.DLL V1.66.0.0
+ 
+<h2>Project:</h2>
+G:\data\ARM Material\Real-time\RTOS_Lab01\project\Lab01_RTOS.uvprojx
+Project File Date:  06/15/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling STM32F10x.s...
+compiling extint.c...
+compiling gpio.c...
+compiling i2c.c...
+compiling main.c...
+..\source\Library\inc\pwm.h(5): warning:  #1295-D: Deprecated declaration Tim1_Init - give arg types
+  void Tim1_Init();
+..\source\Library\inc\pwm.h(6): warning:  #1-D: last line of file ends without a newline
+  void pwmWrite(unsigned int period , unsigned int duty);
+C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h(65): error:  #65: expected a ";"
+  {
+C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h(240): warning:  #12-D: parsing restarts here after previous syntax error
+  } APSR_Type;
+C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h(1245): warning:  #47-D: incompatible redefinition of macro "SCS_BASE"  (declared at line 207 of "..\source\Library\inc\common.h")
+  #define SCS_BASE            (0xE000E000UL)                            /*!< System Control Space Base Address  */
+C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h(1246): warning:  #47-D: incompatible redefinition of macro "ITM_BASE"  (declared at line 203 of "..\source\Library\inc\common.h")
+  #define ITM_BASE            (0xE0000000UL)                            /*!< ITM Base Address                   */
+C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h(1247): warning:  #47-D: incompatible redefinition of macro "DWT_BASE"  (declared at line 204 of "..\source\Library\inc\common.h")
+  #define DWT_BASE            (0xE0001000UL)                            /*!< DWT Base Address                   */
+C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h(1251): warning:  #47-D: incompatible redefinition of macro "NVIC_BASE"  (declared at line 219 of "..\source\Library\inc\common.h")
+  #define NVIC_BASE           (SCS_BASE +  0x0100UL)                    /*!< NVIC Base Address                  */
+C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h(1252): warning:  #47-D: incompatible redefinition of macro "SCB_BASE"  (declared at line 221 of "..\source\Library\inc\common.h")
+  #define SCB_BASE            (SCS_BASE +  0x0D00UL)                    /*!< System Control Block Base Address  */
+C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h(1303): error:  #65: expected a ";"
+  {
+C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h(1569): warning:  #12-D: parsing restarts here after previous syntax error
+  extern volatile int32_t ITM_RxBuffer;                    /*!< External variable to receive characters.                         */
+C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h(1584): error:  #65: expected a ";"
+  {
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h(53): warning:  #12-D: parsing restarts here after previous syntax error
+  extern uint32_t SystemCoreClock;          /*!< System Clock Frequency (Core Clock) */
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1277): warning:  #47-D: incompatible redefinition of macro "FLASH_BASE"  (declared at line 188 of "..\source\Library\inc\common.h")
+  #define FLASH_BASE            ((uint32_t)0x08000000) /*!< FLASH base address in the alias region */
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1278): warning:  #47-D: incompatible redefinition of macro "SRAM_BASE"  (declared at line 147 of "..\source\Library\inc\common.h")
+  #define SRAM_BASE             ((uint32_t)0x20000000) /*!< SRAM base address in the alias region */
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1279): warning:  #47-D: incompatible redefinition of macro "PERIPH_BASE"  (declared at line 148 of "..\source\Library\inc\common.h")
+  #define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1361): warning:  #47-D: incompatible redefinition of macro "OB_BASE"  (declared at line 156 of "..\source\Library\inc\common.h")
+  #define OB_BASE               ((uint32_t)0x1FFFF800)    /*!< Flash Option Bytes base address */
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1385): warning:  #47-D: incompatible redefinition of macro "TIM2"  (declared at line 36 of "..\source\Library\inc\timer.h")
+  #define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1386): warning:  #47-D: incompatible redefinition of macro "TIM3"  (declared at line 37 of "..\source\Library\inc\timer.h")
+  #define TIM3                ((TIM_TypeDef *) TIM3_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1387): warning:  #47-D: incompatible redefinition of macro "TIM4"  (declared at line 38 of "..\source\Library\inc\timer.h")
+  #define TIM4                ((TIM_TypeDef *) TIM4_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1388): warning:  #47-D: incompatible redefinition of macro "TIM5"  (declared at line 39 of "..\source\Library\inc\timer.h")
+  #define TIM5                ((TIM_TypeDef *) TIM5_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1389): warning:  #47-D: incompatible redefinition of macro "TIM6"  (declared at line 40 of "..\source\Library\inc\timer.h")
+  #define TIM6                ((TIM_TypeDef *) TIM6_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1390): warning:  #47-D: incompatible redefinition of macro "TIM7"  (declared at line 41 of "..\source\Library\inc\timer.h")
+  #define TIM7                ((TIM_TypeDef *) TIM7_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1399): warning:  #47-D: incompatible redefinition of macro "USART2"  (declared at line 26 of "..\source\Library\inc\usart.h")
+  #define USART2              ((USART_TypeDef *) USART2_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1400): warning:  #47-D: incompatible redefinition of macro "USART3"  (declared at line 27 of "..\source\Library\inc\usart.h")
+  #define USART3              ((USART_TypeDef *) USART3_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1411): warning:  #47-D: incompatible redefinition of macro "AFIO"  (declared at line 191 of "..\source\Library\inc\common.h")
+  #define AFIO                ((AFIO_TypeDef *) AFIO_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1413): warning:  #47-D: incompatible redefinition of macro "GPIOA"  (declared at line 21 of "..\source\Library\inc\gpio.h")
+  #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1414): warning:  #47-D: incompatible redefinition of macro "GPIOB"  (declared at line 22 of "..\source\Library\inc\gpio.h")
+  #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1415): warning:  #47-D: incompatible redefinition of macro "GPIOC"  (declared at line 23 of "..\source\Library\inc\gpio.h")
+  #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1416): warning:  #47-D: incompatible redefinition of macro "GPIOD"  (declared at line 24 of "..\source\Library\inc\gpio.h")
+  #define GPIOD               ((GPIO_TypeDef *) GPIOD_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1417): warning:  #47-D: incompatible redefinition of macro "GPIOE"  (declared at line 25 of "..\source\Library\inc\gpio.h")
+  #define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1425): warning:  #47-D: incompatible redefinition of macro "USART1"  (declared at line 25 of "..\source\Library\inc\usart.h")
+  #define USART1              ((USART_TypeDef *) USART1_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1448): warning:  #47-D: incompatible redefinition of macro "RCC"  (declared at line 190 of "..\source\Library\inc\common.h")
+  #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(1450): warning:  #47-D: incompatible redefinition of macro "FLASH"  (declared at line 189 of "..\source\Library\inc\common.h")
+  #define FLASH               ((FLASH_TypeDef *) FLASH_R_BASE)
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(2063): warning:  #47-D: incompatible redefinition of macro "RCC_APB2ENR_USART1EN"  (declared at line 42 of "..\source\Library\inc\usart.h")
+  #define  RCC_APB2ENR_USART1EN                ((uint32_t)0x00004000)         /*!< USART1 clock enable */
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(7660): warning:  #47-D: incompatible redefinition of macro "USART_SR_CTS"  (declared at line 40 of "..\source\Library\inc\usart.h")
+  #define  USART_SR_CTS                        ((uint16_t)0x0200)            /*!< CTS Flag */
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(7672): warning:  #47-D: incompatible redefinition of macro "USART_CR1_RE"  (declared at line 47 of "..\source\Library\inc\usart.h")
+  #define  USART_CR1_RE                        ((uint16_t)0x0004)            /*!< Receiver Enable */
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(7673): warning:  #47-D: incompatible redefinition of macro "USART_CR1_TE"  (declared at line 48 of "..\source\Library\inc\usart.h")
+  #define  USART_CR1_TE                        ((uint16_t)0x0008)            /*!< Transmitter Enable */
+C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h(7683): warning:  #47-D: incompatible redefinition of macro "USART_CR1_UE"  (declared at line 49 of "..\source\Library\inc\usart.h")
+  #define  USART_CR1_UE                        ((uint16_t)0x2000)            /*!< USART Enable */
+..\source\code\files\main.c(93): warning:  #223-D: function "mainTRIGGER_INTERRUPT" declared implicitly
+  		 mainTRIGGER_INTERRUPT();
+..\source\code\files\main.c(94): error:  #167: argument of type "USART_TypeDef *" is incompatible with parameter of type "USART_TypeDef *"
+  		vScope=GetChar(USART1);
+..\source\code\files\main.c(97): error:  #167: argument of type "USART_TypeDef *" is incompatible with parameter of type "USART_TypeDef *"
+  			Send_String(USART1,"10% duty cycle\n");
+..\source\code\files\main.c(102): error:  #167: argument of type "USART_TypeDef *" is incompatible with parameter of type "USART_TypeDef *"
+  		 Send_String(USART1,"50% Duty cycle\n");
+..\source\code\files\main.c(107): error:  #167: argument of type "USART_TypeDef *" is incompatible with parameter of type "USART_TypeDef *"
+  		 Send_String(USART1,"90% Duty cycle\n");
+..\source\code\files\main.c: 39 warnings, 7 errors
+compiling nvic.c...
+compiling timer.c...
+compiling watchdog.c...
+compiling usart.c...
+compiling can.c...
+compiling dma.c...
+compiling pwm.c...
+..\source\Library\inc\pwm.h(5): warning:  #1295-D: Deprecated declaration Tim1_Init - give arg types
+  void Tim1_Init();
+..\source\Library\inc\pwm.h(6): warning:  #1-D: last line of file ends without a newline
+  void pwmWrite(unsigned int period , unsigned int duty);
+..\source\Library\src\pwm.c: 2 warnings, 0 errors
+compiling myspi.c...
+compiling croutine.c...
+compiling event_groups.c...
+compiling list.c...
+compiling timers.c...
+compiling queue.c...
+compiling tasks.c...
+compiling heap_2.c...
+compiling port.c...
+".\Objects\Lab01_RTOS.axf" - 7 Error(s), 39 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

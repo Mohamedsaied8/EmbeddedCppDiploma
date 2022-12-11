@@ -1,0 +1,7 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\startup_stm32f10x_md.o"
+--strict --scatter ".\Objects\seven_segment.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\seven_segment.map" -o .\Objects\seven_segment.axf
