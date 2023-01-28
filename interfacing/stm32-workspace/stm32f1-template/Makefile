@@ -114,13 +114,13 @@ SRCS  += system_stm32f10x.c
 # The assembly code in this file is the first one to be
 # executed. Normally you do not change this file.
 ASRC = startup_stm32f10x.s
-CPP_SRCS = crt0.cpp crt0_init_ram.cpp crt1.cpp int_vect.cpp led.cpp buzzer.cpp alarm.cpp main.cpp
+CPP_SRCS = crt0.cpp crt0_init_ram.cpp crt1.cpp int_vect.cpp led.cpp buzzer.cpp alarm.cpp app_ttl.cpp
 # in case we have to many sources and don't want
 # to compile all sources every time
 OBJS = $(SRCS:.c=.o)
 #OBJS += $(ASRC:.s=.o)
 OBJS +=$(CPP_SRCS:.cpp=.o)
-STM_SRC_DIR_C = stm32f10x_gpio.c stm32f10x_rcc.c
+STM_SRC_DIR_C = stm32f10x_gpio.c stm32f10x_rcc.c 
 OBJS += $(STM_SRC_DIR_C:.c=.o)
 
 

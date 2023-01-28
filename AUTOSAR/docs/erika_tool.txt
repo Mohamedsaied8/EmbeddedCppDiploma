@@ -1,0 +1,7 @@
+http://erika.tuxfamily.org/wiki/index.php?title=AUTOSAR-like_Drivers
+
+port driver erika
+http://erika.tuxfamily.org/wiki/index.php?title=AUTOSAR-like_Drivers#PORT
+
+eeprom emulation
+https://github.com/thienan2050/STM32F103C8T6-Tutorial/tree/13cbdc53a2fecab541c1e9488435552f57d9bc10/STM32F10x_AN2594_FW_V3.1.0
