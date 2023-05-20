@@ -22,6 +22,18 @@ int main()
 
     std::cout << "5 === " << myArray[1][2] << "\n";
 
+    // for(auto& var : myArray)
+    for(array<int ,3>& var : myArray)
+    {
+        // for(auto& secondVar : var)
+        for(int& secondVar : var)
+        {
+            std::cout << secondVar << ",";
+        }
+
+        std::cout << "\n";
+    }
+
     // return EXIT_SUCCESS;
     return 0;
 }
