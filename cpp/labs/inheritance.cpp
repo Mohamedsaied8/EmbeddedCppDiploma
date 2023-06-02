@@ -1,4 +1,4 @@
-
+#include <iostream>
 
 class SerialComm 
 {
@@ -37,6 +37,7 @@ class Derived : public Base
 };
 int main()
 {
+    // SerialComm mySerialComm();      //ERROR pure virtual
 
     Derived derived;
     Base *base = &derived;

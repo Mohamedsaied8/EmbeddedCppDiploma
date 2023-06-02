@@ -14,7 +14,7 @@ struct employee
 
 int main()
 {
-    employee emp1 { 1000,40,"Mohamed"};
+    employee emp1 { 1000,40,"Mohamed"};     // aggregate initialization
 
     std::cout << " size of employee "<< sizeof(emp1) << std::endl;
 
