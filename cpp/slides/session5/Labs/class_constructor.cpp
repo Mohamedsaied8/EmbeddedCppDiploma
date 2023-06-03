@@ -20,6 +20,8 @@ enum class Color
     BLACK,
 };
 
+void add(int,int);
+void add(int,int,int);
 class Vehicle
 {
     public:
@@ -27,23 +29,49 @@ class Vehicle
     // constructor syntax:
     // 1. the name must match the class name
     // 2. there is no return type
-    Vehicle();  // = default;
+    Vehicle()
+    {
+        std::cout << "no parameter constructor\n";
 
-    Vehicle(const std::string& vin, const OEM manufacture, const Color color);
+        m_customData = new int;
+        *m_customData = 7;
+    }
 
-    std::string getVehicleData();
+    Vehicle(const std::string& vin, const OEM manufacture, const Color color)
+                : m_VIN(vin), m_OEM(manufacture), m_color(color)    // this is called initialization list
+    {
+        std::cout << "Constructor with parameters\n";
+        m_customData = new int;
+        *m_customData = 5;
+    }
+
+    std::string getVehicleData() const
+    {
+        std::string data;
+        data = m_VIN + ", " + std::to_string(static_cast<int>(m_OEM)) + ", " + std::to_string(static_cast<int>(m_color))
+                    + ", custom data: " + std::to_string(*m_customData);
+
+        return data;
+    } // const keyword means that this method won't change objects data
+
+    // destructor syntax:
+    // same as constructor but has ~ at the beginning
+    ~Vehicle()
+    {
+        // this is RAII concept
+        std::cout << "Destructor\n";
+        delete m_customData;
+    }
 
     private:
     std::string m_VIN = "00000000000000000";
     OEM m_OEM = OEM::BMW;
     Color m_color = Color::BLACK;
+    int* m_customData;
 };
 
 // must be added (or use = default)
-Vehicle::Vehicle()
-{
-    std::cout << "no parameter constructor\n";
-}
+
 
 // Vehicle::Vehicle(const std::string& vin, const OEM manufacture, const Color color)
 // {
@@ -52,26 +80,16 @@ Vehicle::Vehicle()
 //     m_color = color;
 // }
 
-Vehicle::Vehicle(const std::string& vin, const OEM manufacture, const Color color)
-                : m_VIN(vin), m_OEM(manufacture), m_color(color)    // this is called initialization list
-{
-    std::cout << "Constructor with parameters\n";
-}
-
-std::string Vehicle::getVehicleData()
-{
-    std::string data;
-    data = m_VIN + ", " + std::to_string(static_cast<int>(m_OEM)) + ", " + std::to_string(static_cast<int>(m_color));
-
-    return data;
-}
-
 //------------------------------------------------------
 
 int main()
 {
+
     Vehicle myCar_1;    // the constructor with no parameters
     std::cout << "myCar_1 data: " << myCar_1.getVehicleData() << "\n";
+
+
+    myCar_1.getVehicleData();
 
     Vehicle myCar_2("123456789", OEM::Kia, Color::GREEN);   // the second constructor
     std::cout << "myCar_2 data: " << myCar_2.getVehicleData() << "\n";

@@ -12,46 +12,46 @@ Protected     true             true         False
 Private        true            False        False
 
 */
-
+using namespace std;
 class Vehicle
 {
-    private:    // those can't be changed by child classes
+private:    // those can't be changed by child classes
     std::string m_VIN;
     std::string m_color;
     int m_wheelsNumer;
 
-    protected:
+protected:
     int m_distance = 0;     // this can be changed by child classes
     std::string m_name;
 
-    public:
-        Vehicle(std::string vin, std::string color, int wheelsNumer, std::string name)
-                                : m_VIN(vin), m_color(color), m_wheelsNumer(wheelsNumer), m_name(name)
-        {
-            std::cout << "Vehicle Constructor\n";
-        }
+public:
+    Vehicle(std::string vin, std::string color, int wheelsNumer, std::string name)
+                            : m_VIN(vin), m_color(color), m_wheelsNumer(wheelsNumer), m_name(name)
+    {
+        std::cout << "Vehicle Constructor\n";
+    }
 
-        void printVehicleInfo(){
-            std::cout << "vehicle VIN: " << m_VIN
-                        << ", color: " << m_color
-                        << ", name: " << m_name
-                        << ", traveled distance: " << m_distance
-                        << ", number of wheels: " << m_wheelsNumer << "\n";
-        }
+    void printVehicleInfo(){
+        std::cout << "vehicle VIN: " << m_VIN
+                    << ", color: " << m_color
+                    << ", name: " << m_name
+                    << ", traveled distance: " << m_distance
+                    << ", number of wheels: " << m_wheelsNumer << "\n";
+    }
 
-        void move(int distance_km)
-        {
-            m_distance += distance_km;
-            std::cout << "car is moving, current traveled distance: " << m_distance << "Km\n";
-        }
+    void move(int distance_km)
+    {
+        m_distance += distance_km;
+        std::cout << "car is moving, current traveled distance: " << m_distance << "Km\n";
+    }
 };
 
 class Car : public Vehicle
 {
-    private:
+private:
     bool m_ACState = false;
 
-    public:
+public:
     Car(std::string vin, std::string color)
             : Vehicle(vin, color, 4, "car")
     {
@@ -63,11 +63,16 @@ class Car : public Vehicle
         std::cout << "switching AC state to: " << state << "\n";
         m_ACState = state;
     }
+
+    void playInDistance(int newDistance)
+    {
+        m_distance = newDistance;
+    }
 };
 
 class Motorcycle : public Vehicle
 {
-    private:
+private:
     bool m_balanced = true;
 
     void setBalance(bool state)
@@ -75,7 +80,7 @@ class Motorcycle : public Vehicle
         m_balanced = state;
     }
 
-    public:
+public:
     Motorcycle(std::string vin, std::string color)
             : Vehicle(vin, color, 2, "motorcycle")
     {
@@ -85,6 +90,12 @@ class Motorcycle : public Vehicle
     bool isMotorcycleBalanced()
     {
         return m_balanced;
+    }
+
+    void printVehicleInfo()
+    {
+        Vehicle::printVehicleInfo();
+        std::cout << "balanced state: " << m_balanced << "\n";
     }
 
     void printMotorcycleInfo()
@@ -105,6 +116,7 @@ int main()
     Car myCar{"000000000000001", "Red"};
     myCar.move(15);
     myCar.switchAC(true);
+    myCar.playInDistance(0);
     myCar.printVehicleInfo();
 
     std::cout << "--------------------------------------------\n";
@@ -112,6 +124,6 @@ int main()
     Motorcycle myMotorcycle("000000000000002", "White");
     myMotorcycle.move(7);
     bool balance_state = myMotorcycle.isMotorcycleBalanced();
-    // myMotorcycle.printVehicleInfo();
-    myMotorcycle.printMotorcycleInfo();
+    myMotorcycle.printVehicleInfo();
+    // myMotorcycle.printMotorcycleInfo();
 }
