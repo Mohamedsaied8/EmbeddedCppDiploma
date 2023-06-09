@@ -5,6 +5,7 @@ using namespace std;
 // if we don't have virtual then static dispatch, from type on the right
 class Polygon { //base
     public:
+    // virtual void show() = 0 ; // this is called a pure virtual function, meaning that someone should implement it, you can't creat an instance of this class
     virtual void show() {
         cout<<"Its a polygon"<<endl;
     }
@@ -19,6 +20,7 @@ class Triangle : public Polygon {
     public:
     void show() override // it's much better to add override keyword
     {
+        // Polygon::show();
         cout<<"Triangle is 3 sided polygon"<<endl;
     }
 
@@ -44,20 +46,25 @@ void printInfo(Polygon&);
 int main() {
     Polygon *p; //pointer to the base class
 
-    Triangle t; //vptr will be created vptr -> vtable -> vtable[0] ..
+    Triangle t; //vptr will be created vptr -> vtable -> Triangle ..
 
     p = &t; //points to triangle object [vptr is obtained]
 
     p->show();//vtable is accessed to obtain address of show in the triangle object
     p->whoAmI();
-    //   printInfo(t);
+
+    // t.show();
+    // t.whoAmI();
+    // cout << "---------------------\n";
+    // printInfo(t);
+
 
     Rectangle r;
 
     p = &r;
     p->show();
     p->whoAmI();
-    //   printInfo(r);
+    // printInfo(r);
     return 0;
 }
 

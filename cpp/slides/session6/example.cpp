@@ -10,7 +10,8 @@ public:
 
 class derived : public base {
 public:
-    void display() {
+    void display() override
+    {
         cout<<"Function of derived class"<<endl;
     }
 };
@@ -25,6 +26,13 @@ int main() {
 
     derived d1;
     d1.display();
+
+    // base* p1;
+    // p1 = &b1;
+    // p1->display();
+
+    // p1 = &d0;
+    // p1->display();
 
     return 0;
 }
