@@ -12,6 +12,7 @@ auto add(T1 num1, T2 num2) -> decltype(num1+num2)
     return num1 + num2;
 }
 
+// Calc<long> longCalc = Calc(13L , 10L);
 template <typename T>
 class Calc
 {
@@ -25,7 +26,7 @@ class Calc
 
     void add()
     {
-        // std::cout << "t: " << typeid(decltype(m_num1+m_num2)).name() << "\n";
+        std::cout << "t: " << typeid(decltype(m_num1+m_num2)).name() << "\n";
         std::cout << "Calc:: adding: " << m_num1+m_num2 << "\n";
     }
 
@@ -62,6 +63,8 @@ int main()
     // Calc longCalc = Calc(10,3);      // this will auto deduce type to int
     // Calc<long> longCalc = Calc(10, 3);   // this won't compile as default numbers are int not long
     Calc<long> longCalc = Calc(13L , 10L);
+    // Calc longCalc = Calc(13 , 10);
+    // std::vector<long> longCalc2;
     longCalc.add();
     longCalc.sub();
     longCalc.div();

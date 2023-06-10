@@ -1,16 +1,16 @@
 #include <iostream>
 #include <memory>
- 
+
 class Rectangle {
     int length;
     int breadth;
- 
+
 public:
     Rectangle(int l, int b){
         length = l;
         breadth = b;
     }
- 
+
     int area(){
         return length * breadth;
     }
@@ -18,7 +18,7 @@ public:
 
 class Calculator
 {
-    public:
+    public: // Rectangle* ptr
     Calculator(std::shared_ptr<Rectangle> ptr) : m_rectanglePtr(ptr)
     {
     }
@@ -49,12 +49,19 @@ int main(){
     //make_unique
     std::cout << P1->area() << std::endl; // This'll print 50
 
-    std::shared_ptr<Rectangle> P2;
+    std::shared_ptr<Rectangle> P2 = nullptr;
+{
     P2 = std::make_shared<Rectangle>(10,10);
-    auto calc = Calculator(P2);
-    std::cout << "calc.getArea(): " << calc.getArea() << "\n";
+    {
+        auto calc = Calculator(P2);
+        std::cout << "calc.getArea(): " << calc.getArea() << "\n";
+        std::cout << "1:: number of objects havening a reference to P2: " << P2.use_count() << "\n";
+    }
+    std::cout << "2:: number of objects havening a reference to P2: " << P2.use_count() << "\n";
+    // std::shared_ptr<Rectangle> P3(P2);   // OK
+}
 
-    std::cout << "number of objects havening a reference to P2: " << P2.use_count() << "\n";
+    std::cout << "3:: number of objects havening a reference to P2: " << P2.use_count() << "\n";
 
     // This'll print 100
     std::cout << P2->area() << std::endl;
