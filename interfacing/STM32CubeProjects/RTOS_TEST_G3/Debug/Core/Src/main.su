@@ -1,0 +1,5 @@
+../Core/Src/main.c:69:6:vBlueLedTask	24	static
+../Core/Src/main.c:101:6:vGreenLedTask	24	static
+../Core/Src/main.c:118:5:main	16	static
+../Core/Src/main.c:161:6:SystemClock_Config	72	static
+../Core/Src/main.c:201:6:Error_Handler	4	static,ignoring_inline_asm

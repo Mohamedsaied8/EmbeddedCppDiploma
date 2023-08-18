@@ -1,0 +1,7 @@
+../Core/Src/main.c:38:5:main	8	static
+../Core/Src/main.c:64:6:Led_blinking	16	static
+../Core/Src/main.c:71:7:adcInit_Ch1	4	static
+../Core/Src/main.c:107:5:adcRead	4	static
+../Core/Src/main.c:116:6:Clock_72	4	static
+../Core/Src/main.c:131:6:adcInit_Ch0	4	static
+../Core/Src/main.c:165:5:adcRead_0	4	static

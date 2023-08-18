@@ -1,0 +1,4 @@
+../Core/Src/timer.c:10:6:Tim1_Init	16	static
+../Core/Src/timer.c:54:6:pwmWrite	24	static
+../Core/Src/timer.c:67:6:enable_interrupt	16	static
+../Core/Src/timer.c:75:6:disable_interrupt	16	static
