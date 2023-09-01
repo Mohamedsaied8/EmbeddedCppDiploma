@@ -1,0 +1,2 @@
+../Core/Src/main.c:4:6:EXTI4_IRQHandler	0	static
+../Core/Src/main.c:16:5:main	0	static
