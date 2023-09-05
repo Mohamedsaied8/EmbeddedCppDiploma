@@ -24,9 +24,13 @@ int main() {
   cout << endl;
 
  // initialize an unordered_set of int type
-  unordered_multiset<int> numbers_allow_duplicate = {1,15 ,2 , 100, 130, 70, 100};
+  multiset<int> numbers_allow_duplicate;
+
+  numbers_allow_duplicate.insert(70);
+  numbers_allow_duplicate.insert(88);
+  numbers_allow_duplicate.insert(70);
   // print the unordered_set
-  cout << "Numbers are: ";
+  cout << "numbers_allow_duplicate are: ";
   for(auto &num: numbers_allow_duplicate) {
     cout << num << ", ";
   }

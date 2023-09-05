@@ -35,7 +35,7 @@ struct Rectangle //: public Shape
 
 	virtual void set_width(int m_width)
 	{
-		m_Width = m_width;
+		this->m_Width = m_width;
 	}
 
 	int height() const
@@ -67,7 +67,7 @@ struct Square : public Rectangle   //: public Shape
 		return m_Width;
 	}
 
-	void set_width(int m_width)
+	void set_width(int m_width) override
 	{
 		m_Height = m_Width = m_width;
 	}
@@ -95,7 +95,7 @@ void process (Rectangle& r)
 	std::cout << "expect area = " << (w * 10) << " , got " << r.Area() << std::endl;
 }
 
-auto main()-> int
+int main() 
 {
 	Rectangle r{ 5,5 };
 
@@ -104,4 +104,6 @@ auto main()-> int
 	Square s{ 5,5 };
 
 	process(s);
+
+	return 0;
 }

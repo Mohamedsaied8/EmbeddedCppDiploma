@@ -4,10 +4,7 @@
 class Car
 {
 public:
-    Car(std::unique_ptr<IEngine>&& engine)
-        : m_engine(std::move(engine))
-    {
-    }
+    Car(std::unique_ptr<IEngine>&& engine);
 
     void Drive();
     void Stop();

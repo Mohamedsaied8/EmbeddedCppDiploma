@@ -18,7 +18,7 @@ class SimpleBox : public IBox
 public:
     virtual void Open()
     {
-        cout << "Opening te box";
+        cout << "Opening the box\n";
     }
 };
  
@@ -26,17 +26,16 @@ public:
 class ProxyBox : public IBox
 {
 public:
-    ProxyBox(string sUserName, string sPwd):m_UserName(), m_Pwd(sPwd)
+    ProxyBox(string sUserName, string sPwd):m_UserName(sUserName), m_Pwd(sPwd)
     {
  
     }
- 
     void Open()
     {
         if (iSAuthenticated()) {
-            cout << "\nAuthentication Success";
+            cout << "\nAuthentication Success\n";
             m_Box.Open();
-            cout << "Open is called" ;
+            cout << "Open is called\n" ;
         }
         else
             cout << "\nAuthentication Failure , You can't open the Box";
@@ -45,9 +44,12 @@ private:
     bool iSAuthenticated()
     {
         bool bAuthenticated = false;
+        if(m_UserName == "Admin" && m_Pwd == "Test123")
+        {
+            bAuthenticated = true;
+        }
         //bAuthenticated = AUthenication logic here
         return bAuthenticated;
- 
     }
 private:
     string m_UserName;

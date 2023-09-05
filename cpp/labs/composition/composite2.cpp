@@ -6,7 +6,8 @@
 #include <vector>
 #include <iostream> 
 #include <algorithm> 
-#include <functional> 
+#include <functional>  //mem_func
+
 using namespace std;
 
 class Graphic {
@@ -18,10 +19,10 @@ public:
   virtual ~Graphic() {} //virtual destructor
 };
 
-
 class Line : public Graphic {
 public:
-  void draw() const {
+  void draw() const
+  {
     cout << "Line draw()\n";
   }
 };
@@ -45,8 +46,12 @@ class Picture : public Graphic {
 public:
   void draw() const {
     // for each element in gList, call the draw member function
-    for_each(gList.begin(), gList.end(), mem_fun(&Graphic::draw));    
+   for_each(gList.begin(), gList.end(), mem_fun(&Graphic::draw)); 
+  }
 
+  void remove(Graphic *g) 
+  {
+    gList.erase(std::remove(gList.begin(), gList.end(), g));
   }
 
   void add(Graphic *aGraphic) {
@@ -54,7 +59,7 @@ public:
   }
  
 private:
-  vector<Graphic*> gList; 
+  vector<Graphic*> gList;  //aggregation
 };
  
 int main()
@@ -62,13 +67,14 @@ int main()
   Line line;
   Rectangle rect;
   Text text;
+
 /*
   line.draw();
   rect.draw();
   text.draw();
 */
   Picture pic;
-  pic.add(&line);
+  pic.add(&line); 
   pic.add(&rect);
   pic.add(&text);
   pic.add(&rect);

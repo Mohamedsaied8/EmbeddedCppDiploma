@@ -44,7 +44,7 @@ private:
 
 //return       operator << (inputs)
 //overloading for insertor operator
-std::ostream& operator<<(std::ostream& output,Complex const& complex)
+std::ostream& operator<<(std::ostream& output, Complex const& complex)
 {
     output << complex.mReal << "+i" << complex.mImg;
     return output;

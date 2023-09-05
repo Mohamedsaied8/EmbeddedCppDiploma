@@ -3,27 +3,69 @@
 #include <iostream>
 #include <iterator>
 #include <map>
+#include <unordered_map>
+
 using namespace std;
+std::pair<int,int> g_pair(8,10);
+
+std::unordered_map<int, string> x_unordered_map;
+
+template<class T1, class T2>
+struct xPair
+{
+	xPair(){}
+	xPair(T1 first_, T2 second_) : first(first_), second(second_)
+	{
+
+	}
+
+	//factory mehtod.
+	static xPair Make_xPair(T1 local_first, T2 local_second)
+	{
+		//xPair temp_pair(local_first,local_second );
+		return xPair(local_first, local_second);
+	}
+
+T1 first;
+T2 second;
+};
+
 
 int main()
 {
-	map<string, int> myMap;
-	myMap.insert(pair<string, int>("Mohamed", 40)); 
 
+	xPair<int, string> x_pair = xPair<int,string>::Make_xPair(11,"Mohamed Salah");
+
+ 
+	map<string, int> myMap;
+	//factory method
+	myMap.insert(make_pair<string, int>("Mohamed Saied", 22)); 
+	myMap.insert(make_pair<string, int>("Mohamed Salah", 22)); 
+	
 	// empty map container
 	map<int, int> quiz;
-
+	//quiz_id , time limit
 	// insert elements in random order
-	quiz.insert(pair<int, int>(1, 40)); //make_pair(1,40s)
+	quiz.insert(make_pair<int, int>(1, 40)); 
 	quiz.insert(pair<int, int>(2, 30));
 	quiz.insert(pair<int, int>(3, 50));
 	quiz.insert(pair<int, int>(4, 20));
-	quiz.insert(pair<int, int>(5, 50));
-	quiz.insert(pair<int, int>(6, 50));
+	quiz.insert(pair<int, int>(5, 100));
+	quiz.insert(pair<int, int>(6, 200));
 	
 	quiz[7]=10;	 // another way of inserting a value in a map
 	
+	for(auto& pair : quiz)
+	{
+		auto key = pair.first;
+		auto value = pair.second;
 
+	}
+
+	for(auto& [key, value] : quiz)
+	{
+
+	}
 	// printing map quiz
 	map<int, int>::iterator itr;
 	cout << "\nThe map quiz is : \n";
@@ -44,6 +86,7 @@ int main()
 		cout << '\t' << itr->first << '\t' << itr->second
 			<< '\n';
 	}
+
 	cout << endl;
 
 	// remove all elements up to
@@ -59,7 +102,7 @@ int main()
 	}
 
 	// remove all elements with key = 4
-	int num;
+ 	int num;
 	num = quiz2.erase(4);
 	cout << "\ngquiz2.erase(4) : ";
 	cout << num << " removed \n";
@@ -70,12 +113,13 @@ int main()
 	}
 
 	cout << endl;
-
+ 
 	// lower bound and upper bound for map gquiz1 key = 5
 	cout << "gquiz1.lower_bound(5) : "
 		<< "\tKEY = ";
-	cout << quiz2.lower_bound(5)->first << '\t';
-	cout << "\tELEMENT = " << quiz2.lower_bound(5)->second
+	auto it = quiz2.lower_bound(5);
+	cout << it->first << '\t';
+	cout << "\tELEMENT = " << it->second
 		<< endl;
 	cout << "gquiz1.upper_bound(5) : "
 		<< "\tKEY = ";

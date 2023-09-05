@@ -15,6 +15,7 @@ public:
     void setName(std::string firstName, std::string lastName);
     std::string getName();
     void display() const;
+    
 private:
     std::uint16_t mId;
     std::uint32_t mSalary;

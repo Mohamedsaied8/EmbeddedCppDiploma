@@ -22,7 +22,7 @@ class Page : public PageObject {
       cout << "Item Deleted from Page" << endl;
    }
 };
-
+#include <array>
 //combining inheritance and composition
 class Copy : public PageObject {
    vector<PageObject> copyPages;

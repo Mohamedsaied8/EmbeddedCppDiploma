@@ -1,5 +1,5 @@
 #include <iostream>
-
+ 
 /*
 
 Access      Same Class        Child       Outside
@@ -11,6 +11,7 @@ Protected     True            True         False
 Private       true            False        False
 
 */
+
 class Complex
 {
 
@@ -19,7 +20,7 @@ public:
     {
     }
 
-friend std::ostream& operator<<(std::ostream& output,Complex const& complex);
+friend std::ostream& operator<<(std::ostream& output,const Complex &complex);
 
 //return operator+()
 // complex c3 = c1.operator+(c2) 
@@ -39,6 +40,7 @@ float getReal()
 {
     return this->mReal;
 }
+
 // copy assignment operator
 /*Complex& operator=(Complex &rhs)
 {
@@ -55,9 +57,9 @@ private:
 
 //return       operator << (inputs)
 //overloading for insertor operator
-std::ostream& operator<<(std::ostream& output,Complex const& complex)
+std::ostream& operator<<(std::ostream& output,const Complex &complex)
 {
-    output << "friend OSTREAM: " << complex.mReal << "+i" << complex.mImg;
+    output << "ostream : " << complex.mReal << "+i" << complex.mImg;
     return output;
 }
 

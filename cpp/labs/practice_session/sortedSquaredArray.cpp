@@ -6,18 +6,6 @@
 * Space complexity should be O(1)
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
 #include <iostream>
 #include <vector>
 #include <algorithm>

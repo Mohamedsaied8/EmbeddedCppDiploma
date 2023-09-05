@@ -2,30 +2,31 @@
 #include <vector>
 using namespace std;
   
+  // time_complexity = O(Log(n))
 int binarySearch(vector<int> v, int To_Find)
 {
-    int lo = 0, hi = v.size() - 1; //first = 0 , last = size -1
+    int first = 0, last = v.size() - 1; //first = 0 , last = size -1
     int mid;
     // This below check covers all cases , so need to check
     // for mid=lo-(hi-lo)/2
-    while (hi - lo > 1) 
+    while (last - first > 1) 
     {
-        int mid = (hi + lo) / 2;
+        int mid = (last + first) / 2;
         if (v[mid] < To_Find) {
-            lo = mid + 1;
+            first = mid + 1; 
         }
         else {
-            hi = mid;
+            last = mid;
         }
     }
 
-    if (v[lo] == To_Find) {
+    if (v[first] == To_Find) {
         cout << "Found"
-             << " At Index " << lo << endl;
+             << " At Index " << first << endl;
     }
-    else if (v[hi] == To_Find) {
+    else if (v[last] == To_Find) {
         cout << "Found"
-             << " At Index " << hi << endl;
+             << " At Index " << last << endl;
     }
     else {
         cout << "Not Found" << endl;
@@ -41,5 +42,6 @@ int main()
     binarySearch(v, To_Find);
     To_Find = 10;
     binarySearch(v, To_Find);
+    
     return 0;
 }

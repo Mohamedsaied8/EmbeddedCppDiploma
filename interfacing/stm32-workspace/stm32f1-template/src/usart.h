@@ -11,6 +11,7 @@ enum class Usart_n
     usart2 = 1,
     usart3 = 2
 };
+
 class USART
 {
     public:

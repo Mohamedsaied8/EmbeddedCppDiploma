@@ -5,26 +5,26 @@
 
 #include <iostream>
 
-void swap(int *n1,int *n2)
+
+void swap(int *first, int *second)
 {
-    int temp = *n1;
-    *n1 = *n2;
-    *n2 = temp;
-}
-int add(int n1,int n2)
-{
-    return n1+n2;
+
+    printf("Swap::address of pointer first: %x\n", &first);
+    printf("Swap::address of variable that first points to: %x\n", first);
+    printf("Swap::Value of variable that first points to: %x\n", *first);
+    int temp = *first;
+    *first = *second;
+    *second = temp;
+
 }
 
 int main()
 {
     int x = 8;
     int y = 5;
-
-    x = add(x,y); //pass by value
-    
-    swap(&x,&y); //pass by reference
-
+    printf("main::Address of variable that first points to: %x\n", &x);
+    printf("main::Value of variable that first points to: %x\n", x);
+    swap(&x, &y);
     std::cout << "x:" << x <<" y:" << y << std::endl;
 
     return 0;

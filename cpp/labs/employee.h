@@ -4,8 +4,6 @@ class Employee
 {
     public:
     
-    Employee();
-
     int getSalary();
     void setAge(int age);
     int getAge();

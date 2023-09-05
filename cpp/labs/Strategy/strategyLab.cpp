@@ -5,24 +5,24 @@
 using namespace std;
 
 //Abstract Class
-struct Strategy
+struct IStrategy
 {
     //Algorithm Interface
-     virtual void calculateSpeed()=0;
+    virtual void calculateSpeed() = 0;
 };
 
-struct BMW : Strategy
+struct StrategyBMW : IStrategy
 {
-    void calculateSpeed()
+    void calculateSpeed() override
     {
-       cout << "BMW\n";
+       cout << "BMW Car\n";
     }
 
 };
 
-struct MiniCoper : Strategy
+struct StrategyMiniCoper : IStrategy
 {
-    void calculateSpeed()
+    void calculateSpeed() override
     {
         cout << "Mini Coper\n";
     }
@@ -30,30 +30,41 @@ struct MiniCoper : Strategy
 };
 
 //Context
-struct Vehicle
+ struct Vehicle
 {
-   Vehicle(Strategy *_strategy) : strategy(_strategy)
+   Vehicle(IStrategy *_strategy) : strategy(_strategy)
     {
-
     }
+
    void vehicleSpeed()
    {
      strategy->calculateSpeed();
    }
     
     //Ptr to implementation : pimpl idiom 
-    Strategy *strategy;  
+    IStrategy *strategy;  
 };
 
 
 int main()
 {
-   BMW bmw;
-   MiniCoper mini;
-   Vehicle E36(&bmw);
-   Vehicle car2(&mini);
 
-    car2.vehicleSpeed();
+   StrategyBMW bmw;
+   StrategyMiniCoper mini;
+ 
+    IStrategy * strategy = &bmw;
+    strategy->calculateSpeed(); // bmw
+
+    strategy = &mini;
+    strategy->calculateSpeed(); // mini
+
+   Vehicle  E36(&bmw);
+    E36.vehicleSpeed();
+
+   Vehicle car2(&mini);
+   car2.vehicleSpeed();
+
+  
 
     return 0;
 }

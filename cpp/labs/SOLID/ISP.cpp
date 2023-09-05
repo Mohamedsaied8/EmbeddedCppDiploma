@@ -4,20 +4,20 @@
 #include <vector>
 struct Document;
 
-/*struct IMachine
-{
-	virtual void print(std::vector<Document*> docs) = 0;
-	virtual void scan(std::vector<Document*> docs) = 0;
-	virtual void fax(std::vector<Document*> docs) = 0;
-};*/
-//
+//  struct IMachine
+// {
+// 	virtual void print(std::vector<Document*> docs) = 0;
+// 	virtual void scan(std::vector<Document*> docs) = 0;
+// 	virtual void fax(std::vector<Document*> docs) = 0;
+// }; 
+// //
 
- //struct MFP : IMachine
-//{
-//	void print(std::vector<Document*> docs) override;
-//	void scan(std::vector<Document*> docs) override;
-//	void fax(std::vector<Document*> docs) override;
-//};
+// struct MFP : IMachine
+// {
+// 	void print(std::vector<Document*> docs) override;
+// 	void scan(std::vector<Document*> docs) override;
+// 	void fax(std::vector<Document*> docs) override;
+// };
 
 struct IPrinter
 {

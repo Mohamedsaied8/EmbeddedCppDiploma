@@ -1,12 +1,24 @@
 #include <iostream>
 #include <vector>
 
+//C++17
+template<class T>
+class myVector
+{
+    public:
+    myVector(T args...) 
+    {
+        //memory allocation
+    }
+
+};
 
 int main()
 {
 
+    myVector<int> vect{8,9,6};
     std::vector<int> container {1,2,4};
-
+        
     char num = 9;
     auto qNum = num; 
 

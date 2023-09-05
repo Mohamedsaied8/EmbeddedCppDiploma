@@ -4,11 +4,11 @@ OBJS = Date.o testDate.o
 SRC = $(OBJS, .o=.c)
 
 testDate: $(OBJS) 
-	$(CC) -o testDate Date.o testDate.o 
+	$(CC) -o $@ Date.o testDate.o 
 	
 # Define a pattern rule that compiles every .c file into a .o file
 %.o: %.c
-	$(CC) -c $@ $<
+	$(C) -c $@ $<
 
 .PHONY: cleanall cleanobj 
 

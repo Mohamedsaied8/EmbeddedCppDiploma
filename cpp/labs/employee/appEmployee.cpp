@@ -1,20 +1,17 @@
 #include <iostream>
-#include "employee.h"
+#include "employee_g4.h"
 
-employee::employee() //default constructor
-{
-    std::cout << "Default Constructor" <<std::endl;
-}
-employee::employee(int id) //parameterized constructor
-{
-     std::cout << "paramterized Constructor" <<std::endl;
-}
 int main()
 {
-    employee emp;
+    Employee *demp = new Employee();
 
-    employee emp_me(5);
-    
-    std::cout << sizeof(employee) << std::endl;
+    std::cout << "size of Employee " << sizeof(Employee);
+
+    Employee emp;
+    emp.setId(1);
+    emp.setName("Mohamed" , "Saied");
+    auto id = emp.getId();
+
+    //std::cout << sizeof(employee) << std::endl;
     return 0;
 }

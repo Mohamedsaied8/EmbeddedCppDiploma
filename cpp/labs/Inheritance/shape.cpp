@@ -19,10 +19,26 @@ class Shape{
 
 public:
     virtual float calculateArea()=0; //pure virtual function
-    virtual void displayArea()=0;
+    virtual void displayArea()=0;   
     virtual ~Shape()=default;
 };
 
+class Square : public Shape
+{
+    public:
+    Square(){}
+    float calculateArea() override
+    {
+        return mHeight*mHeight;
+    }
+    void displayArea() override
+    {
+        
+    } 
+    private:
+    int mHeight;
+
+};
 class Circle : public Shape {
 
     public:

@@ -1,11 +1,5 @@
 #include <iostream>
 
-void swap(int &r1, int &r2)
-{
-    int temp = r1;
-    r1 = r2;
-    r2 = temp;
-}
 
 int main()
 {
@@ -20,11 +14,9 @@ int main()
     int ****p4 = &p3;
 
     p = &y;
+    
     //---------------
     int &r = x;
-   
-    &r = y;
-
     int &r2 = r;
     int &r3 = r2;
     int &r4 = r3;

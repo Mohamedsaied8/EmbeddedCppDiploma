@@ -21,6 +21,7 @@ public:
       { 
         observers.push_back(&o);
       }
+
      void Detach(Observer& o)
      {
         observers.erase(std::remove(observers.begin(),observers.end(),&o));
@@ -60,7 +61,7 @@ private:
     int second;
 }; 
 
-class DigitalClock: public Observer 
+class DigitalClock: public Observer
 { 
 public: 
      explicit DigitalClock(ClockTimer& s) : subject(s)

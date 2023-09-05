@@ -1,5 +1,8 @@
 #include <iostream>
-#include <string.h>
+extern "C"
+{
+    #include <string.h> 
+}
 
 class String
 {
@@ -10,7 +13,7 @@ class String
         printf("created\n");
         mSize = strlen(string);
         m_data = new char[mSize];
-        memcpy(m_data,string,mSize);
+        memcpy(m_data, string, mSize);
     }
 
     String(const String& other) //copy constructor
@@ -21,7 +24,7 @@ class String
         memcpy(m_data,other.m_data,mSize);
     }
 
-    String(String&& other) //rvalue referene
+    String(String&& other) //rvalue referene in move constructor
     {
         printf("moved\n");
         mSize = other.mSize;
@@ -55,9 +58,10 @@ class Entity
     }
     
     Entity(String&& name) : mName(std::move(name))  
-    {
-
+    { 
+        std::cout << "Entity move constructor";
     }
+
     void printName()
     {
         mName.print();
@@ -72,7 +76,11 @@ int main()
     //1st copy in main
     //2nd copy
     String str("RoboticsCorner");
-    Entity entity(std::move(str));
+    Entity entity(str);
+    
+    Entity entity2(String("EmbeddedC++"));
+
     entity.printName();
 
+    return 0;
 }

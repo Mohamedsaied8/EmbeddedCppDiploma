@@ -6,7 +6,6 @@
 std::string vColor[] = { "Red","Green","Blue" };
 enum class Color { Red, Green, Blue } ;
 
-
 /**
  * \brief Globale variable for print function
  */
@@ -19,7 +18,6 @@ struct Product
 	std::string		m_Name;
 	Color			m_Color;
 	Size			m_Size;
-	
 };
 
 
@@ -66,8 +64,6 @@ struct Prodcuts
 	}
 };
 
-
-
 /*The fix using specification pattern*/
 
 /// <summary>
@@ -79,7 +75,6 @@ struct ISpecification
 {
 	virtual bool is_specification(T* item) = 0;
 };
-
 
 struct ColorSpecification : public ISpecification<Product>
 {
@@ -194,7 +189,7 @@ int main(int argc, char ** argv)
 	//AndSpecification size_color { large, green};
 	FindProduct fp;
 
-	Items allproducts {&apple,&tree,&car};
+	std::vector<Product*> allproducts {&apple,&tree,&car};
 
 	//auto results = fp.Find(allproducts, green);
 	auto results = fp.Find(allproducts, size_color);

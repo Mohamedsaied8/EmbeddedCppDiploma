@@ -27,7 +27,7 @@ char* global_Function()
 }
 int main()
 {
-    
+ 
     while(1)
     {
         char *p = global_Function();

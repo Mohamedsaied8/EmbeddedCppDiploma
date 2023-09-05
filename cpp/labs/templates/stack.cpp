@@ -9,6 +9,11 @@ Stack<T>::Stack(int s)
 	stackPtr = new T[size] ;
 }
 
+template<class T>
+Stack<T>::~Stack()
+{
+	delete [] stackPtr;
+}
  // push an element onto the Stack 
 template <class T>
 int Stack<T>::push(const T& item)

@@ -3,9 +3,7 @@
 ///
 ///https://raw.githubusercontent.com/boost-ext/di/cpp14/include/boost/di.hpp
 
-#include <iostream>
-#include <ostream>
-
+ #include <iostream>
 #include "di.hpp"
 
 
@@ -22,6 +20,15 @@ struct ConsoleLogger: ILogger
 		std::cout << "LOG: " << s.c_str() << std::endl;
 	}
 };
+
+struct DiagnosticLogger: ILogger
+{
+	void Log(const std::string& s) override
+	{
+		std::cout << "Diagnostic Logger: " << s.c_str() << std::endl;
+	}
+};
+
 struct Engine 
 {
 	/**
@@ -44,11 +51,17 @@ struct Engine
 		std::cout << voulme << std::endl;
 	}
 
-	friend std::ostream& operator<<(std::ostream& os, const Engine& obj)
+	 Engine& operator+(Engine& e )
 	{
-		return os
-			<< "voulme: " << obj.voulme
-			<< " hourse_power: " << obj.hourse_power;
+		this->hourse_power += e.hourse_power;
+		return *this;
+
+	} 
+	friend std::ostream& operator<<(std::ostream& os , 
+		const Engine& engine)
+	{
+		return os << "volume " << engine.voulme 
+			<< "horse power " << engine.hourse_power <<std::endl;
 	}
 };
 
@@ -82,15 +95,19 @@ struct Car
 int main (int argc, char ** argv)
 {
 	using namespace boost::di;
+
 	auto injector = make_injector(bind<ILogger>().to<ConsoleLogger>());
 	auto c = injector.create<std::shared_ptr<Car>>();
+	
 	c->engine->voulme = 5;
 	std::cout << *c<<std::endl;
 
 	auto engine = std::make_shared<Engine>();
 	auto console = std::make_shared<ConsoleLogger>();
-	auto bmw = std::make_shared<Car>(engine,console);
+	auto diagnostic = std::make_shared<DiagnosticLogger>();
+	auto bmw = std::make_shared<Car>(engine, diagnostic);
 
+ 	std::cout << *bmw;
 	//TODO: values
 	return 1;
 }

@@ -2,15 +2,29 @@
 
 using namespace std; 
 
-class Subject 
+class Protocol 
 {
 public:
     virtual void defineProtocol()=0;
 	virtual void request() = 0;
-	virtual ~Subject() {}
+	virtual ~Protocol() {}
 };
- 
-class RealSubject : public Subject 
+
+class VehicleToInfrastructure : public Protocol 
+{
+public:
+
+    void defineProtocol()
+    {
+
+    }
+	void request() 
+    { 
+		cout << "RealSubject.request()" << endl; 
+	}
+};
+
+class VehicleToVehicle : public Protocol 
 {
 public:
 
@@ -24,34 +38,37 @@ public:
 	}
 };
  
-class Proxy : public Subject 
+class Proxy : public Protocol 
 {
 private:
-	Subject* realSubject;
+	Protocol* protocol;
 
 public:
-	Proxy() : realSubject (new RealSubject())  //allocation for real subject
+	Proxy(Protocol* p) : protocol (p)  //allocation for real subject
 	{}
 
 	~Proxy() { 
-		delete realSubject; 
+		delete protocol; 
 	}
     void defineProtocol()
     {
-       realSubject->defineProtocol(); 
+       protocol->defineProtocol(); 
     }
 	// Forward calls to the RealSubject:
 	void request() 
 	{ 
 		//do something
-		realSubject->request(); 
+		protocol->request(); 
 	}
 };
  
  void run()
  {
-	Proxy p;
+	Proxy p(new VehicleToInfrastructure());
 	p.request();
+	
+	Proxy proxy_v2v(new VehicleToVehicle());
+	proxy_v2v.request();
  }
 
 int main() 

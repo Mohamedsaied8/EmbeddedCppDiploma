@@ -14,9 +14,9 @@ Date.o: Date.cpp Date.h
 .PHONY: cleanall cleanobj
 
 cleanall : cleanobj 
-	del	*.exe 
+	del	*.exe
 
 cleanobj :
-	del	*.o	
+	del	*.o
 
 

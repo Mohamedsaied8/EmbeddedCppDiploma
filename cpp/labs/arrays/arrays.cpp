@@ -10,11 +10,26 @@ void automaticArray(const int size)
     int num[size]={10,5,6} ;
 }
 
+void Function(std::array<int, 5> arr)
+{
+
+}
 int main(){
 
     const int size = 3;
     automaticArray(size);
+    std::string name("Mohamed");
+    for(auto letter : name)
+    {
+        std::cout << sizeof(letter); // 1 byte = char 
+    }
     std::array<int,5> numInt{3,6,8,5,6};
+
+    for (auto element : numInt)
+    {
+        std::cout << element;
+    }
+
     int key=0;
     int expression = 10; //interview question
     bool alwaysRun = true;

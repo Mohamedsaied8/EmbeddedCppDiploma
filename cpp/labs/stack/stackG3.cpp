@@ -1,5 +1,5 @@
 #include <iostream>
-//template<typename T>
+template<typename T>
 class Stack {
 
 public:
@@ -9,8 +9,13 @@ public:
         buffer = new int[capacity];
         mTop = buffer;
     }
+    
+    ~Stack()
+    {
+        delete[] buffer;
+    }
 
-    void push(int element)
+    void push(T element)
     {
         if(!isFull())
         {
@@ -47,6 +52,6 @@ public:
 int main()
 {
     Stack<double> s1(5);
-    Stack<uint32_t> s2
+    Stack<uint32_t> s2(7);
     return 0;
 }

@@ -5,10 +5,11 @@ using namespace std;
 
 class BST {
 
-
 public:
 	// Default constructor.
 	BST();
+
+	~BST();
 
 	// Parameterized constructor.
 	BST(int);
@@ -26,6 +27,12 @@ public:
 	BST *left, *right; // pointer to implementation pimpl idiom
 
 };
+
+BST::~BST()
+{
+	delete left;
+	delete right;
+}
 
 // Default Constructor definition.
 BST ::BST()
@@ -69,6 +76,7 @@ BST* BST ::Insert(BST* root, int value)
 	// Return 'root' node, after insertion.
 	return root;
 }
+
 BST* BST::search(BST* root, int key)
 {
     // Base Cases: root is null or key is present at root
@@ -98,7 +106,6 @@ void BST ::Inorder(BST* root)
 int main()
 {
 	BST b, *root = NULL;
-
 	root = b.Insert(root, 50);
 	b.Insert(root, 30);
 	b.Insert(root, 20);
@@ -110,6 +117,8 @@ int main()
     if(keyChild->data == 80)
          cout <<"found matched key";
 	//b.Inorder(root);
+	delete keyChild;
+	delete root;
 	return 0;
 }
 

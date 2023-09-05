@@ -22,6 +22,7 @@ void Buy(Fruit fruit)
     std::cout << fruit.name <<" " << fruit.price <<" "<< fruit.weight << std::endl;
 
 }
+
 int main()
 {
     Fruit orange; 

@@ -31,6 +31,7 @@ void merge(int array[], int const left, int const mid,
   
     // Merge the temp arrays back into array[left..right]
     while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo) {
+       
         if (leftArray[indexOfSubArrayOne] <= rightArray[indexOfSubArrayTwo]) {
             array[indexOfMergedArray]= leftArray[indexOfSubArrayOne];
             indexOfSubArrayOne++;
@@ -69,8 +70,8 @@ void mergeSort(int array[], int const begin, int const end)
     if (begin >= end)
         return; // Returns recursively
   
-    auto mid = begin + (end - begin) / 2;
-    mergeSort(array, begin, mid); //left
+    auto mid = begin + (end - begin) / 2; 
+    mergeSort(array, begin, mid); //left // b  e 1
     mergeSort(array, mid + 1, end); //right
     merge(array, begin, mid, end);
 }

@@ -38,12 +38,13 @@ void Employee::setName(std::string firstName, std::string lastName)
 {
     mFullName = firstName + lastName;
 }
+
 std::string Employee::getName()
 {
     return mFullName;
 }
 
- void  Employee::display() const
+void  Employee::display() const
 {
    std::cout << "Employee Id" << mId  
                 << "Employee salary" << mSalary

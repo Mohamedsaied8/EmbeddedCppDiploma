@@ -1,11 +1,12 @@
 #include <iostream>
-#include "stack.h"
+#include "stack_impl.h"
+#include <algorithm>
 using namespace std ;
 
 int main()
-{
+{	
+	Stack<double> ds(8);
 	Stack<float> fs(5);
-
 	
 	float f = 1.1 ;
 	cout << "Pushing elements onto fs" << endl ;

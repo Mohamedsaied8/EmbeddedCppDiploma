@@ -24,11 +24,18 @@ void inputVector(std::vector<int> &vec)
 int main()
 {
     std::vector<int> v(3);
+    inputVector(v); //1 2 3
 
-    inputVector(v);
+    std::vector<char> v_char;
+    v_char.push_back('a'); // v_char[0] = 'a' 
+
+    std::vector<std::string> v_str;
+    v_str.push_back("hello");
+
     std::cout <<"Vector's size: " << v.size() << " capacity: "<< v.capacity() << std::endl;
 
-    v.push_back(9);
+    v.push_back(100); // 1 2 3 100
+    v.push_back(9);   // 1 2 3 100 9
     v.push_back(15);
 
     outputVector(v);

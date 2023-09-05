@@ -3,7 +3,7 @@
 #include <vector>
 #include <fstream>
 
-
+// SRP is about: the class has one reason to change
 
 struct Journal //:public IJournal*/
 {
@@ -23,17 +23,18 @@ struct Journal //:public IJournal*/
 	{
 		m_entries.push_back(entry);
 	}
+	
 	/// <summary>
 	///  not single Responsablity
 	///
 	/// </summary>
 	/// <param name="filename">The file name to save entries </param>
-	void save(const std::string& filename)
-	{
-		std::ofstream ofs(filename);
-		for (auto& s : m_entries)
-			ofs << s.c_str() << std::endl;
-	}
+	// void save(const std::string& filename)
+	// {
+	// 	std::ofstream ofs(filename);
+	// 	for (auto& s : m_entries)
+	// 		ofs << s.c_str() << std::endl;
+	// }
 };
 
 /// <summary>
@@ -56,6 +57,7 @@ struct PrintEntirsManager
 };
 
 
+
 auto main(int  argc,char** argv)-> int
 {
 	Journal Alahram{ "Alahram" };
@@ -63,11 +65,10 @@ auto main(int  argc,char** argv)-> int
 
 	Alahram.add("There is was a visit for the prime minstar of Egypt to india");
 	//Alahly.add("Alahly wining the third place in the worl cup");
-
-	PrintEntirsManager::save(Alahram, "AlahramXML");
+ 	PrintEntirsManager::save(Alahram, "AlahramXML");
 	//PrintEntirsManager::save(Alahly,"Al-Ahly");
 
-	return 1;
+	return 0;
 }
 
 

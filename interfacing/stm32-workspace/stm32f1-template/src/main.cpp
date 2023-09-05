@@ -22,11 +22,14 @@ int main(void)
      LED leds;
      hal::Buzzer buzzer(GPIOB,GPIO_Pin_9);
      Vehicle::Alarm alarm(&buzzer);
-
+     leds.LEDS_OFF();
+     WaitMS();
+    leds.LEDS_ON();
+    WaitMS();
     while (1)
     { 
         
-        if(!(GPIOB->IDR & (1<< 5))) // PB5 0000 0000 0010 0000
+        if(true) // PB5 0000 0000 0010 0000
         {
             leds.LEDS_ON();
             alarm.setAlarm(true);
