@@ -1,0 +1,7 @@
+../Core/Inc/uart.h:34:2:USART::USART(UsartInstance)	16	static
+../Core/Inc/uart.h:49:7:void USART::Usart1Initialize()	24	static
+../Core/Inc/uart.h:68:7:char USART::read()	16	static
+../Core/Inc/uart.h:73:7:void USART::sendChar(char)	16	static
+../Core/Inc/uart.h:78:7:void USART::sendString(char*)	24	static
+../Core/Inc/uart.h:86:8:static void* USART::operator new(size_t, UsartInstance)	16	static
+../Core/Src/main.cpp:6:5:int main()	24	static
