@@ -1,0 +1,4 @@
+../Core/Src/spi.cpp:9:1:mcal::SPI::SPI()	16	static
+../Core/Src/spi.cpp:21:6:void mcal::SPI::SPI1_Initialize()	16	static
+../Core/Src/spi.cpp:25:6:void mcal::SPI::SPI2_Initialize()	16	static
+../Core/Src/spi.cpp:29:7:static void* mcal::SPI::operator new(unsigned int, mcal::SPIInstance)	16	static
