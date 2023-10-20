@@ -1,0 +1,11 @@
+../Core/Src/port.c:176:15:pxPortInitialiseStack	24	static
+../Core/Src/port.c:196:13:prvTaskExitError	16	static,ignoring_inline_asm
+../Core/Src/port.c:222:6:SVC_Handler	0	static,ignoring_inline_asm
+../Core/Src/port.c:242:13:prvPortStartFirstTask	0	static,ignoring_inline_asm
+../Core/Src/port.c:263:12:xPortStartScheduler	8	static
+../Core/Src/port.c:360:6:vPortEndScheduler	4	static
+../Core/Src/port.c:368:6:vPortEnterCritical	16	static,ignoring_inline_asm
+../Core/Src/port.c:385:6:vPortExitCritical	16	static,ignoring_inline_asm
+../Core/Src/port.c:397:6:PendSV_Handler	0	static,ignoring_inline_asm
+../Core/Src/port.c:434:6:SysTick_Handler	16	static,ignoring_inline_asm
+../Core/Src/port.c:628:32:vPortSetupTimerInterrupt	4	static
